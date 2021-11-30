@@ -170,7 +170,7 @@
 				  <ul class="treeview-menu">
 					<li><a href="{{route('veiw.stock')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock</a></li>
 					<li><a href="auth_register.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Stock</a></li>
-					<li><a href="auth_lockscreen.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock Adjustments</a></li>
+					<li><a href="{{route('stock_adj.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock Adjustments</a></li>
 				  </ul>
 				</li>
 				<li class="treeview">

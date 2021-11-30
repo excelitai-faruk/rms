@@ -122,7 +122,7 @@ public function StockAdjustmentUpdate(Request $request){
 
 
     $notification = array(
-        'message' =>  'StockAdjustment Add Sucessyfuly',
+        'message' =>  'StockAdjustment Updated Sucessyfuly',
         'alert-type' => 'success'
     );
     
