@@ -15,14 +15,9 @@ class CreateFoodMenuCategoriesTable extends Migration
     {
         Schema::create('food_menu_categories', function (Blueprint $table) {
             $table->id();
-
-
             $table->string('outlet_id');
             $table->string('category_name');
             $table->string('description');
-            
-
-
             $table->timestamps();
         });
     }

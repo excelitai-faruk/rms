@@ -60,7 +60,7 @@
 					  </span>
 					</a>
 					<ul class="treeview-menu">
-					  <li><a href="sample_blank.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredient Category</a></li>
+					  <li><a href="{{route('add.ingredientcategories')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredient Category</a></li>
 					  <li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredient Units</a></li>
 					  <li><a href="sample_custom_scroll.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredients </a></li>
 					  <li><a href="sample_gallery.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Modifiers</a></li>
@@ -79,7 +79,8 @@
 					  </span>
 					</a>
 					<ul class="treeview-menu">
-					  <li><a href="sample_blank.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Category</a></li>
+
+					  <li><a href="{{route('add.foodmenucategory')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Category</a></li>
 					  <li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menus</a></li>				
 					  
   
