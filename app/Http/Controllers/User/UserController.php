@@ -53,4 +53,119 @@ class UserController extends Controller
         Auth::guard('web')->logout();
         return redirect('/');
     }
+
+
+    
+    ////////// Customer/user Crud method start //////////
+    
+    //Cutomer Add 
+    public function CustomerAdd(){
+        
+
+        return view('backend.customer.customer_add');
+    }
+
+
+
+    // Customer Store
+    public function CustomerStore(Request $request){
+        //validate
+
+        // dd($request->all());
+
+        $request->validate([
+            'outlet_id'=> "required",
+            'name'=> "required",
+            'email'=> "required",
+            'dob'=> "required",
+            'address'=> "required",
+            'phone'=> "required",
+        ],
+        [
+            'outlet_id.required' => "Input",
+            'name.required' => "Input",
+            'email.required' => "Input",
+            'dob.required' => "Input",
+            'address.required' => "Input",
+            'phone.required' => "Input",
+        ]);
+
+
+        User::insert([
+            'outlet_id' => $request->outlet_id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'dob' => $request->dob,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'email_verified_at' =>$request->email_verified_at
+            
+
+        ]);
+
+        $notification = array(
+			'message' => 'Inserted Successfully',
+			'alert-type' => 'success'
+		);
+
+        return redirect()->route('customer.view')->with($notification);
+    }
+
+    // Customer View
+    public function CustomerView(){
+        $customers = User::latest()->get();
+        return view ('backend.customer.customer_view',compact('customers'));
+    }
+
+
+// Customer Edit
+public function CustomerEdit($id){
+    $customer_edit = User::findorFail($id);
+
+    return view('backend.customer.customer_edit',compact('customer_edit'));
+
+}
+
+// Customer Update
+
+  public function CustomerUpdate(Request $request){
+
+    $customer_id = $request->id;
+
+    User::findOrFail($customer_id)->update([
+
+        'outlet_id' => $request->outlet_id,
+        'name' => $request->name,
+        'email' => $request->email,
+        'dob' => $request->dob,
+        'address' => $request->address,
+        'phone' => $request->phone,
+  
+
+    ]);
+
+    $notification = array(
+    'message' => 'Customer Updated Successfully',
+    'alert-type' => 'success'
+  );
+
+  return redirect()->route('customer.view')->with($notification);
+
+  }  // end method
+
+// Customer Delete
+
+    public function CustomerDelete($id){
+
+        User::findOrFail($id)->delete();
+  
+        $notification = array(
+        'message' => ' Deleted Successfully',
+        'alert-type' => 'success'
+      );
+  
+      return redirect()->back()->with($notification);
+
+}
+
 }
