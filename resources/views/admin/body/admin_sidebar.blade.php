@@ -153,18 +153,15 @@
 
 				  </li>
 
-
-				  <li>
-					<a href="{{ route('payment.view') }}">
-
-				</li>
 				<li>
-					<a href="analysis.html">
+						<a href="{{ route('payment.view') }}">
 
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Payment Method</span>
+					  
 					</a>
 				  </li>
+
 
 				<li>
 				  <a href="analysis.html">
