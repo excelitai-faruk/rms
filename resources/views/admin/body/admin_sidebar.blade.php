@@ -127,12 +127,23 @@
 					</a>
 				  </li>
 
-				  <li>
-					<a href="analysis.html">
-					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
-					  <span>Manage Coustomer</span>
+
+
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-Chat-locked"><span class="path1"></span><span class="path2"></span></i>
+					  <span>Manage Customer</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
 					</a>
+					<ul class="treeview-menu">
+					  <li><a href="{{ route('customer.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Customer</a></li>
+					  <li><a href="{{ route('customer.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Customer</a></li>					 
+					</ul>
 				  </li>
+
+				 
 
 
 				<li>
@@ -144,7 +155,7 @@
 
 
 				  <li>
-					<a href="analysis.html">
+					<a href="{{ route('payment.view') }}">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Payment Method</span>
 					</a>
@@ -198,7 +209,7 @@
 
 
 
-
+				  
 
 
 
@@ -212,9 +223,9 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="error_404.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense Items</a></li>
-					<li><a href="error_404.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense</a></li>
-					<li><a href="error_500.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Expense</a></li>		
+					<li><a href="{{ route('expenseitem.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense Items</a></li>
+					<li><a href="{{ route('expense.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense</a></li>
+					<li><a href="{{ route('expense.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Expense</a></li>		
 				  </ul>
 				</li> 
 				
