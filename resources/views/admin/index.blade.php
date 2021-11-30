@@ -9,7 +9,7 @@
 @section('content')
     
 
-
+<div class="content-wrapper">
 
 <div class="container-fluid">
     <!-- Main content -->
@@ -390,6 +390,7 @@
         </div>
     </section>
     <!-- /.content -->
+  </div>
   </div>
 
 

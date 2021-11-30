@@ -5,6 +5,10 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Employee\EmployeeController;
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
+use App\Http\Controllers\Backend\OutletController;
+
+use App\Http\Controllers\SettingController;
+
 
 
 use App\Http\Controllers\Backend\ExpenseController;
@@ -98,6 +102,7 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
 //////////////////////////  Super Admin Login end //////////////////////////////////////////////////
 
 
+
 //*************************************** Customer/User Crud Operation start *************************************//
 
 //User Add
@@ -168,3 +173,42 @@ Route::post('/update', [PaymentMethodController::class, 'PaymentUpdate'])->name(
 Route::get('/delete/{id}', [PaymentMethodController::class, 'PaymentDelete'])->name('payment.delete');
 
 });
+
+
+
+//////////////////////////  outlet rout //////////////////////////////////////////////////
+
+
+// Admin All Brands Route Group 
+Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
+
+
+    Route::post('/store', [OutletController::class, 'OutletStore'])->name('outlet.store');
+    //outlet view
+    Route::get('outlet/view',[OutletController::class,'OutletView'])->name('veiw.outlet');
+    //outlet Delete
+    Route::post('/outlet/delete',[OutletController::class,'OutletDelete'])->name('outlet.delete');
+
+
+    //outlet Edit
+    Route::get('outletdeshboard/add', [OutletController::class, 'OutletDeshbord'])->name('outlet.deshbord');
+
+    Route::get('/outlet/edit/{id}',[OutletController::class,'OutletEdit'])->name('outlet.edit');
+// outlet Update
+    Route::post('/outlet/update',[OutletController::class,'OutletUpdate'])->name('outlet.update');
+
+    
+
+    // seting
+
+    Route::get('setting/add', [SettingController::class, 'SettingtAdd'])->name('setting.show');
+
+    //setting stor
+     Route::post('setting/store', [SettingController::class, 'SettingStore'])->name('setting.store');
+
+
+
+
+
+
+
