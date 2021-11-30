@@ -32,10 +32,6 @@
 	<link rel="stylesheet" href=" {{ asset('backend/css/style.css ') }}">
 	<link rel="stylesheet" href=" {{ asset('backend/css/skin_color.css ') }}">
 
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
-	alpha/css/bootstrap.css" rel="stylesheet">
-     
-
      
   </head>
 
@@ -116,28 +112,26 @@
 	
 	<!-- Page Content overlay -->
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" 
-	 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- Vendor JS -->
 	<script src=" {{ asset('backend/js/vendors.min.js ') }} "></script>
 	<script src=" {{ asset('backend/js/pages/chat-popup.js ') }} "></script>
-	<script src=" {{ asset('../backend/assets/vendor_components/apexcharts-bundle/dist/apexcharts.min.js ') }} "></script>
-    <script src=" {{ asset('../backend/assets/icons/feather-icons/feather.min.js ') }} "></script>
+	<script src=" {{ asset('backend/assets/vendor_components/apexcharts-bundle/dist/apexcharts.min.js ') }} "></script>
+    <script src=" {{ asset('backend/assets/icons/feather-icons/feather.min.js ') }} "></script>
 		
+
+	<script src=" {{ asset('backend/assets/vendor_components/OwlCarousel2/dist/owl.carousel.js ') }} "></script>
+	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/core.js ') }} "></script>
+
+	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/maps.js ') }} "></script>
+	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/geodata/worldLow.js ') }} "></script>
+	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/themes/kelly.js ') }} "></script>
+	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/themes/animated.js ') }} "></script>
+
 	<script src=" {{ asset('/backend/assets/vendor_components/OwlCarousel2/dist/owl.carousel.js ') }} "></script>
 
-	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/animated.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/lang/de_DE.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/germanyLow.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/fonts/notosans-sc.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/"></script>
+
+
 
 	// data table script
 	<script src="{{ asset('../backend/assets/vendor_components/datatable/datatables.min.js ')}}"></script>
@@ -147,8 +141,13 @@
 	<script src=" {{ asset('backend/js/template.js ') }} "></script>
 	<script src=" {{ asset('backend/js/pages/dashboard.js ') }} "></script>
 
+
 	// data table script
 	<script src="{{ asset('backend/js/pages/data-table.js') }}"></script>
+
+
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 
 
@@ -191,7 +190,10 @@
 	  </script>
 
 
+
 @yield('script')
+
+
 
 	
 </body>

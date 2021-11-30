@@ -18,7 +18,6 @@ class CreateIngredientCatergoriesTable extends Migration
             $table->string('outlet_id');
             $table->string('category_name');
             $table->string('description');
-
             $table->timestamps();
         });
     }

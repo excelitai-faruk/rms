@@ -55,7 +55,7 @@
 					  </span>
 					</a>
 					<ul class="treeview-menu">
-					  <li><a href="sample_blank.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredient Category</a></li>
+					  <li><a href="{{route('add.ingredientcategories')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredient Category</a></li>
 					  <li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredient Units</a></li>
 					  <li><a href="sample_custom_scroll.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Ingredients </a></li>
 					  <li><a href="sample_gallery.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Modifiers</a></li>
@@ -74,7 +74,8 @@
 					  </span>
 					</a>
 					<ul class="treeview-menu">
-					  <li><a href="sample_blank.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Category</a></li>
+
+					  <li><a href="{{route('add.foodmenucategory')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Category</a></li>
 					  <li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menus</a></li>				
 					  
   
@@ -85,7 +86,7 @@
 
 
 				<li class="treeview">
-				  <a href="#">
+				  <a href="{{route('veiw.purchase')}}">
 					<i class="icon-Group"><span class="path1"></span><span class="path2"></span></i>
 					<span>Manage Purchase</span>
 					<span class="pull-right-container">
@@ -93,8 +94,8 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="customer.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Purchase</a></li>
-					<li><a href="members.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Purchase</a></li>
+					<li><a href="{{route('purchase.add')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Purchase</a></li>
+					<li><a href="{{route('veiw.purchase')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Purchase</a></li>
 				  </ul>
 				</li>
 				<li class="treeview">
@@ -111,7 +112,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="analysis.html">
+					<a href="{{route('veiw.supplier')}}">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Supplier</span>
 					</a>
@@ -187,7 +188,7 @@
 				  
 				</li>					
 				<li class="treeview">
-				  <a href="#">
+				  <a href="">
 					<i class="icon-Chat-locked"><span class="path1"></span><span class="path2"></span></i>
 					<span>Manage Stock</span>
 					<span class="pull-right-container">
@@ -195,7 +196,7 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="auth_login.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock</a></li>
+					<li><a href="{{route('veiw.stock')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock</a></li>
 					<li><a href="auth_register.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Stock</a></li>
 					<li><a href="auth_lockscreen.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock Adjustments</a></li>
 				  </ul>
