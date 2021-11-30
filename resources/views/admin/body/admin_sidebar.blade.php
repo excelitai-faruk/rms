@@ -17,7 +17,6 @@
 					<li><a href="index.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Dashboard</a></li>				
 				  </ul>
 				</li>
-
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-Clipboard-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
@@ -27,12 +26,11 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="order.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Outlet</a></li>
-					<li><a href="order_details.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>view Outlet</a></li>
+					<li><a href="{{ route('outlet.deshbord') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Outlet Deashboard</a></li>
+					<li><a href="{{ route('outlet.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Outlet</a></li>
+					<li><a href="{{ route('veiw.outlet') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>view Outlet</a></li>
 				  </ul>
 				</li>
-
-
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-Dinner"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
@@ -48,9 +46,6 @@
 					<li><a href="menu_categories.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Waiter</a></li>
 				  </ul>
 				</li>
-
-
-
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
@@ -103,8 +98,6 @@
 					<li><a href="members.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Purchase</a></li>
 				  </ul>
 				</li>
-
-
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-Chat-locked"><span class="path1"></span><span class="path2"></span></i>
@@ -117,18 +110,14 @@
 					  <li><a href="auth_login.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Employee</a></li>
 					  <li><a href="auth_register.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Employee</a></li>					 
 					</ul>
-				  </li>
-
-
-
+				</li>
 				<li>
 					<a href="analysis.html">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Supplier</span>
 					</a>
-				  </li>
-
-				  <li>
+				</li>
+				<li>
 					<a href="analysis.html">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Coustomer</span>
@@ -141,10 +130,8 @@
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Table</span>
 					</a>
-				  </li>
-
-
-				  <li>
+				</li>
+				<li>
 					<a href="analysis.html">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Payment Method</span>
@@ -157,6 +144,12 @@
 					<span>Transfer</span>
 				  </a>
 				</li>
+				<li>
+					<a href="{{route('setting.show')}}">
+					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
+					  <span>Setting</span>
+					</a>
+				  </li>
 
 
 				<li class="treeview">
@@ -165,10 +158,7 @@
 					<span>Manage Sale</span>				
 				  </a>				  
 				  
-				</li>	
-
-
-					
+				</li>					
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-Chat-locked"><span class="path1"></span><span class="path2"></span></i>
@@ -183,11 +173,6 @@
 					<li><a href="auth_lockscreen.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock Adjustments</a></li>
 				  </ul>
 				</li>
-
-
-
-
-
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-Cart"><span class="path1"></span><span class="path2"></span></i>
@@ -195,11 +180,6 @@
 					</a>				  
 					
 				  </li>
-
-
-
-
-
 
 
 
@@ -218,8 +198,6 @@
 					<li><a href="error_500.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Expense</a></li>		
 				  </ul>
 				</li> 
-				
-				
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
@@ -233,16 +211,12 @@
 					<li><a href="extra_profile.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Coustomer Due Payments</a></li>
 				  </ul>
 				</li>	
-
-
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Attendance</span>					
 					</a>					
 			    </li>	
-
-
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
@@ -274,17 +248,12 @@
 
 				  </ul>
 				</li>  
-
-
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Send SMS</span>					
 					</a>					
 			    </li>	
-
-
-
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
@@ -300,20 +269,8 @@
 					  <li><a href="sample_gallery.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>LogOut</a></li>
   
 					</ul>
-				  </li>
-			
-				
-				
+				</li>		
 			  </ul>
-
-
-
-
-
-
-
-
-
 			  
 			  <div class="sidebar-widgets">
 				
@@ -325,4 +282,5 @@
 		</div>
     </section>
   </aside>
+  
   
