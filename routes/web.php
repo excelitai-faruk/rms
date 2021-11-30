@@ -5,9 +5,14 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Employee\EmployeeController;
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
+
+use App\Http\Controllers\Backend\FoodMenuCategoryController;
+use App\Http\Controllers\Backend\IngredientCategoriesController;
+
 use App\Http\Controllers\Backend\OutletController;
 
 use App\Http\Controllers\SettingController;
+
 
 
 
@@ -16,8 +21,8 @@ Route::get('/', function () {
     return view('auth.admin.login');
 });
 
-Auth::routes();
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Auth::routes();
+ //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 //////////////////////////  User Login Start //////////////////////////////////////////////////
@@ -95,8 +100,87 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
          Route::post('logout',[SuperAdminController::class,'logout'])->name('logout');
     });
 });
-//////////////////////////  Super Admin Login end //////////////////////////////////////////////////
 
+//////////////////////////  Super Admin Login end ///////////////////////////////////////////////////
+
+
+//////////////////////////////////  Food Menu Category Start //////////////////////////////////////////////
+
+//Food Menu Add
+Route::get('/add/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryAdd'])->name('add.foodmenucategory');
+
+//Food Menu Store
+
+Route::post('/store/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryStore'])->name('store.foodmenucategory');
+
+//Food Menu View
+
+Route::get('/view/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryView'])->name('view.foodmenucategory');
+
+//Food Menu Edit
+
+Route::get('/edit/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryEdit'])->name('edit.foodmenucategory');
+
+//Food Menu Update
+
+Route::post('/update/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryUpdate'])->name('update.foodmenucategory');
+
+//Food Menu Delete
+
+Route::get('/delete/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryDelete'])->name('delete.foodmenucategory');
+
+
+//////////////////////////////////  Food Menu Category End //////////////////////////////////////////////
+
+
+
+
+
+
+
+//////////////////////////////////  Ingredient Categories Start //////////////////////////////////////////////
+
+//Ingredient Categories Add
+
+Route::get('/add/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesAdd'])->name('add.ingredientcategories');
+
+//Ingredient Categories Store
+
+Route::post('/store/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesStore'])->name('store.ingredientcategories');
+
+//View
+
+Route::get('/view/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesView'])->name('view.ingredientcategories');
+
+//Ingredient Categories  Edit
+
+Route::get('/edit/{id}/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesEdit'])->name('edit.ingredientcategories');
+
+//Ingredient Categories  Update
+
+Route::post('/update/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesUpdate'])->name('update.ingredientcategories');
+
+
+//Food Menu Delete
+
+Route::get('/delete/{id}/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesDelete'])->name('delete.ingredientcategories');
+
+
+
+//////////////////////////////////  Ingredient Categories End //////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////  Ingredient Unit  //////////////////////////////////////////////////
+
+//Ingredient Unit Add
+
+Route::get('/add/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsAdd'])->name('add.ingredientunits');
+
+//Ingredient Unit Store
+
+Route::post('/store/ingredientunit',[IngredientUnitsController::class, 'IngredientCategoriesStore'])->name('store.ingredientunits');
 
 
 
@@ -129,6 +213,7 @@ Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
 
     //setting stor
      Route::post('setting/store', [SettingController::class, 'SettingStore'])->name('setting.store');
+
 
 
 
