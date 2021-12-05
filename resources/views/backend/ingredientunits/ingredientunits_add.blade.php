@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-6"><br><br><br>
       
-          <form action="{{route('store.ingredientcategories')}}" method="POST">
+          <form action="{{route('store.ingredientunits')}}" method="POST">
             
                 @csrf
                 <h3 class="box-title">Add Unit</h3>
