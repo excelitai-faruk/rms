@@ -110,6 +110,51 @@
 					</ul>
 				  </li> 
 
+				  {{-- dgfhjdgfhjgfjs --}}
+			
+					
+
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+					  <span> Food Management </span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+				
+					<ul class="treeview-menu">
+						<li><a href=""><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Manage Category</a></li>
+
+					  <li><a href="{{route('category.add')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Category</a></li>
+					  <li><a href="{{route('category.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Category</a></li>				
+					
+					</ul>
+				
+				  </li>
+
+
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+					  <span> Manage Food </span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+				
+					<ul class="treeview-menu">
+						
+
+					  <li><a href="{{route('food.add')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Food</a></li>
+					  <li><a href="{{route('food.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Food</a></li>
+					  <li><a href="{{route('foodvarient.add')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i> Food Varient</a></li>
+					  			
+					
+					</ul>
+				
+				  </li>
+
 
 
 
@@ -135,6 +180,7 @@
 					  </span>
 					</a>
 					<ul class="treeview-menu">
+						<li><a href="{{route('employee.deshbord')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i> Employee Deshboard</a></li>
 					  <li><a href="auth_login.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Employee</a></li>
 					  <li><a href="auth_register.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Employee</a></li>					 
 					</ul>
@@ -150,7 +196,13 @@
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Coustomer</span>
 					</a>
-				  </li>
+
+					<ul class="treeview-menu">
+					  <li><a href="{{ route('customer.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Customer</a></li>
+					  <li><a href="{{ route('customer.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Customer</a></li>					 
+					</ul>
+				</li>
+
 
 
 				<li>
@@ -172,11 +224,22 @@
 					<span>Transfer</span>
 				  </a>
 				</li>
-				<li>
-					<a href="{{route('setting.show')}}">
-					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
+				
+
+
+				  <li class="treeview">
+					<a href="{{route('veiw.purchase')}}">
+					  <i class="icon-Group"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Setting</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
 					</a>
+					<ul class="treeview-menu">
+						<li><a href="{{route('setting.desh')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i> setting desh</a></li>
+					  <li><a href="{{route('setting.show')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>add setting</a></li>
+					  <li><a href="{{route('setting.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>view setting</a></li>
+					</ul>
 				  </li>
 
 

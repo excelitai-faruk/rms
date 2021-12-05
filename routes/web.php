@@ -36,6 +36,9 @@ use App\Http\Controllers\Backend\OutletController;
 
 use App\Http\Controllers\SettingController;
 
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\FoodController;
+use App\Http\Controllers\Backend\FoodVarientController;
 
 
 use App\Http\Controllers\Backend\ExpenseController;
@@ -472,6 +475,10 @@ Route::get('/delete/{id}', [PaymentMethodController::class, 'PaymentDelete'])->n
 
 
 // Admin All Brands Route Group 
+
+
+//////////////////////////////////////outlet part//////////////////////////////////////////////////
+
 Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
 
 
@@ -482,7 +489,7 @@ Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
     Route::post('/outlet/delete',[OutletController::class,'OutletDelete'])->name('outlet.delete');
 
 
-    //outlet Edit
+    /////////////////////////////////////////////outlet Edit////////////////////////////////////////////
     Route::get('outletdeshboard/add', [OutletController::class, 'OutletDeshbord'])->name('outlet.deshbord');
 
     Route::get('/outlet/edit/{id}',[OutletController::class,'OutletEdit'])->name('outlet.edit');
@@ -491,12 +498,42 @@ Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
 
     
 
-    // seting
+    /////////////////////////////////// setting//////////////////////////////////////////////////////////////
+
+    Route::get('setting/desh', [SettingController::class, 'SettingtDesh'])->name('setting.desh');
 
     Route::get('setting/add', [SettingController::class, 'SettingtAdd'])->name('setting.show');
 
     //setting stor
      Route::post('setting/store', [SettingController::class, 'SettingStore'])->name('setting.store');
+
+      //setting view
+      Route::get('setting/view', [SettingController::class, 'SettingView'])->name('setting.view');
+
+      //////////////////////////////////////employeer deshboard///////////////////////////////////////////////
+
+      Route::get('employee/desh', [EmployeeController::class, 'EmployeeDesh'])->name('employee.deshbord');
+
+
+      //////////////////////////////////////////////// category part/////////////////////////////////////////////
+
+      Route::get('category/add', [CategoryController::class, 'CategoryAdd'])->name('category.add');
+      Route::post('category/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
+      Route::get('category/view', [CategoryController::class, 'CategoryView'])->name('category.view');
+      Route::post('/category/delete',[CategoryController::class,'CategoryDelete'])->name('category.delete');
+      Route::get('/category/edit/{id}',[CategoryController::class,'CategoryEdit'])->name('category.edit');
+      Route::post('/category/update',[CategoryController::class,'CategoryUpdate'])->name('category.update');
+      //////////////////////////////////////////////// category part/////////////////////////////////////////////
+
+      //////////////////////////////////////////////// manage food /////////////////////////////////////////////
+
+      Route::get('food/add', [FoodController::class, 'FoodAdd'])->name('food.add');
+      Route::post('food/store', [FoodController::class, 'FoodStore'])->name('food.store');
+      Route::get('food/view', [FoodController::class, 'FoodView'])->name('food.view');
+      Route::post('/food/delete',[FoodController::class,'FoodDelete'])->name('food.delete');
+      Route::get('/food/edit/{id}',[FoodController::class,'FoodEdit'])->name('food.edit');
+      Route::post('/food/update',[FoodController::class,'FoodUpdate'])->name('food.update');
+///////////////////////////////////////////foodvarient////////////////////////////////////////////////////////
 
 
      //******************Reservation***************************/
@@ -569,6 +606,15 @@ Route::get('order_list/add', [OrderListController::class, 'OrderListAdd'])->name
 
 //Store Order List
 Route::post('/order_list/store', [OrderListController::class, 'OrderListStore'])->name('order_list.store');
+
+        Route::get('food/varient/add', [FoodVarientController::class, 'FoodVarientAdd'])->name('foodvarient.add');
+        Route::post('food/varient/store', [FoodVarientController::class, 'FoodVarientStore'])->name('foodvarient.store');
+        Route::get('food/varient/view', [FoodVarientController::class, 'FoodVarientView'])->name('foodvarient.view');
+        Route::post('/food/varient/delete',[FoodVarientController::class,'FoodVarientDelete'])->name('foodvarient.delete');
+        Route::get('/food/varient/edit/{id}',[FoodVarientController::class,'FoodVarientEdit'])->name('foodvarient.edit');
+
+        Route::post('/food/varient/update',[FoodVarientController::class,'FoodVarientUpdate'])->name('foodvarient.update');
+
 
 // // view Reservation Setting
 //  Route::get('reservation_setting/view',[ReservationSettingController::class,'ReservationSettingView'])->name('reservation_setting.view');
