@@ -1,5 +1,5 @@
 
-@extends('admin.main_master') 
+@include('admin.main_master') 
 
 <section class="purches" style="margin-top: 150px">
     <div class="card-body">

@@ -1,4 +1,4 @@
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
  <div class="box" style="margin-top: 50px;margin-left:50px;margin-right:50px">

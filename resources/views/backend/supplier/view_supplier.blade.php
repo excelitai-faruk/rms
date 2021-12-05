@@ -1,8 +1,6 @@
-hi Eqramul
 
 
-
-@extends('admin.main_master')
+@include('admin.main_master')
 
             <div class="row form-gap" style="margin-top:100px">
                 <div class="col-lg-2"></div>

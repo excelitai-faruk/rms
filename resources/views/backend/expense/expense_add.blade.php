@@ -3,7 +3,7 @@
 
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left: 450px;margin-top:150px" >

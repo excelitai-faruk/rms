@@ -107,8 +107,9 @@
 					  </span>
 					</a>
 					<ul class="treeview-menu">
-					  <li><a href="auth_login.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Employee</a></li>
-					  <li><a href="auth_register.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Employee</a></li>					 
+					  <li><a href="{{ route('employee.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Employee</a></li>
+					  <li><a href="{{ route('employee.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Employee</a></li>
+					  <li><a href="{{ route('dep.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Manage Department</a></li>					 
 					</ul>
 				</li>
 				<li>
@@ -128,19 +129,23 @@
 					  <span class="pull-right-container">
 						<i class="fa fa-angle-right pull-right"></i>
 					  </span>
-
-				</li>
-				<li>
-					<a href="analysis.html">
-					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
-					  <span>Manage Coustomer</span>
-
 					</a>
 					<ul class="treeview-menu">
-					  <li><a href="{{ route('customer.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Customer</a></li>
-					  <li><a href="{{ route('customer.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Customer</a></li>					 
-					</ul>
-				  </li>
+						<li><a href="{{ route('customer.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Customer</a></li>
+						<li><a href="{{ route('customer.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Customer</a></li>					 
+					  </ul>
+				</li>
+
+
+
+
+
+
+
+
+
+
+
 
 				 
 
@@ -195,7 +200,7 @@
 				  <ul class="treeview-menu">
 					<li><a href="{{route('veiw.stock')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock</a></li>
 					<li><a href="auth_register.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Food Menu Stock</a></li>
-					<li><a href="auth_lockscreen.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock Adjustments</a></li>
+					<li><a href="{{route('stock_adj.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Stock Adjustments</a></li>
 				  </ul>
 				</li>
 				<li class="treeview">
@@ -280,6 +285,10 @@
 					  <span>Send SMS</span>					
 					</a>					
 			    </li>	
+
+
+
+
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
@@ -295,7 +304,65 @@
 					  <li><a href="sample_gallery.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>LogOut</a></li>
   
 					</ul>
-				</li>		
+				</li> 	
+				
+				
+
+
+
+
+
+
+
+
+				<li class="treeview">
+					<a href="#">
+					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+					  <span>Human Resource</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+
+
+					<ul class="treeview-menu">
+					  <li><a href="sample_blank.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Designation</a></li>
+					  <li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Employee</a></li>
+					  <li><a href="sample_coming_soon.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Employee</a></li>
+	
+  
+					</ul>
+
+				  </li> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			  </ul>
 			  
 			  <div class="sidebar-widgets">

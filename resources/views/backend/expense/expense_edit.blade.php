@@ -1,6 +1,6 @@
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left: 450px;margin-top:150px" >
@@ -35,15 +35,9 @@
                     @endforeach
 
 
-                    {{--  <option value="{{ $category->id }}" {{ $category->id == $subcategory->category_id ? 'selected': '' }} > {{ $category->category_name }} </option>	  --}}
-
-
                  </select>
 
-                     {{--  @error('expense_item_id') 
-                     <span class="text-danger">{{ $message }}</span>
-                     @enderror  --}}
-
+                     
 
                  </div>
                                         

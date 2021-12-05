@@ -1,6 +1,6 @@
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 <div class="row" style="margin-top:100px">

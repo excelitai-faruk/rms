@@ -1,11 +1,6 @@
-<h1>Hi Eqramul</h1>
 
 
-
-
-<h1>Hello</h1>
-
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left:450px" >

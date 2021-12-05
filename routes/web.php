@@ -6,31 +6,31 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Employee\EmployeeController;
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
 
-
+// Eqramul
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\StockAdjustmentController;
-
 use App\Http\Controllers\TableController;
 
-use Illuminate\Support\Facades\Auth;
 
+// Pronoy
 use App\Http\Controllers\Backend\FoodMenuCategoryController;
 use App\Http\Controllers\Backend\IngredientCategoriesController;
 
-
+// Faruk
 use App\Http\Controllers\Backend\OutletController;
-
 use App\Http\Controllers\SettingController;
 
 
-
+// Radia
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PaymentMethodController;
+use App\Http\Controllers\Employee\DepartmentController;    // reltionship acche department er sathy tai employee folder er vitor
 
 
 
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('auth.admin.login');
@@ -119,68 +119,53 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
 //////////////////////////  Super Admin Login end ///////////////////////////////////////////////////
 
 
+//  ************************************ End Login Method *************************************************** //
+
+
+
+
 //////////////////////////////////  Food Menu Category Start //////////////////////////////////////////////
 
 //Food Menu Add
 Route::get('/add/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryAdd'])->name('add.foodmenucategory');
 
 //Food Menu Store
-
 Route::post('/store/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryStore'])->name('store.foodmenucategory');
 
 //Food Menu View
-
 Route::get('/view/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryView'])->name('view.foodmenucategory');
 
 //Food Menu Edit
-
 Route::get('/edit/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryEdit'])->name('edit.foodmenucategory');
 
 //Food Menu Update
-
 Route::post('/update/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryUpdate'])->name('update.foodmenucategory');
 
 //Food Menu Delete
-
 Route::get('/delete/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryDelete'])->name('delete.foodmenucategory');
-
-
 //////////////////////////////////  Food Menu Category End //////////////////////////////////////////////
-
-
-
-
 
 
 
 //////////////////////////////////  Ingredient Categories Start //////////////////////////////////////////////
 
 //Ingredient Categories Add
-
 Route::get('/add/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesAdd'])->name('add.ingredientcategories');
 
 //Ingredient Categories Store
-
 Route::post('/store/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesStore'])->name('store.ingredientcategories');
 
 //View
-
 Route::get('/view/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesView'])->name('view.ingredientcategories');
 
 //Ingredient Categories  Edit
-
 Route::get('/edit/{id}/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesEdit'])->name('edit.ingredientcategories');
 
 //Ingredient Categories  Update
-
 Route::post('/update/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesUpdate'])->name('update.ingredientcategories');
 
-
 //Food Menu Delete
-
 Route::get('/delete/{id}/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesDelete'])->name('delete.ingredientcategories');
-
-
 
 //////////////////////////////////  Ingredient Categories End //////////////////////////////////////////////
 
@@ -190,54 +175,46 @@ Route::get('/delete/{id}/ingredient',[IngredientCategoriesController::class, 'In
 /////////////////////////////////////  Ingredient Unit  //////////////////////////////////////////////////
 
 //Ingredient Unit Add
-
 Route::get('/add/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsAdd'])->name('add.ingredientunits');
 
 //Ingredient Unit Store
-
 Route::post('/store/ingredientunit',[IngredientUnitsController::class, 'IngredientCategoriesStore'])->name('store.ingredientunits');
 
 
 
-//******************Product Purchasing*************************** */
+//************************************************Product Purchasing****************************************** */
 
 //Add purchase
 Route::get('purchase/add', [PurchaseController::class, 'PurchaseAdd'])->name('purchase.add');
-
 
 //Store purchase
 Route::post('/purchase/store', [PurchaseController::class, 'PurchaseStore'])->name('purchase.store');
 
 //Purchase view
-
 Route::get('purchase/view',[PurchaseController::class,'PurchaseView'])->name('veiw.purchase');
 
 //Purchase Edit
 Route::get('/purchase/edit/{id}',[PurchaseController::class,'PurchaseEdit'])->name('purchase.edit');
 
-
 //Purchase Update
 Route::post('/purchase/update',[PurchaseController::class,'PurchaseUpdate'])->name('purchase.update');
-
 
 //Purchase Delete
 Route::post('/purchase/delete',[PurchaseController::class,'PurchaseDelete'])->name('purchase.delete');
 
-//******************Product Supplier*************************** */
+
+//******************************************   Product Supplier   *************************************************** */
 //Add Supplier
 Route::get('supplier/add', [SupplierController::class, 'SupplierAdd'])->name('supplier.add');
 
 //Store Supplier
 Route::post('/supplier/store', [SupplierController::class, 'SupplierStore'])->name('supplier.store');
 
-
 //Supplier view
-
 Route::get('supplier/view',[SupplierController::class,'SupplierView'])->name('veiw.supplier');
 
 //Supplier Edit
 Route::get('/supplier/edit/{id}',[SupplierController::class,'SupplierEdit'])->name('supplier.edit');
-
 
 //Supplier Update
 Route::post('/supplier/update',[SupplierController::class,'SupplierUpdate'])->name('supplier.update');
@@ -247,30 +224,27 @@ Route::post('/supplier/delete',[SupplierController::class,'SupplierDelete'])->na
 
 
 
-//******************Stock*************************** */
+//************************************************   Stock   ************************************************************************ */
 //Add Stock
 Route::get('stock/add', [StockController::class, 'StockAdd'])->name('stock.add');
 
- //Store Stock
- Route::post('/stock/store', [StockController::class, 'StockStore'])->name('stock.store');
+//Store Stock
+Route::post('/stock/store', [StockController::class, 'StockStore'])->name('stock.store');
 
-
- //Stock view view
-
+//Stock view view
 Route::get('stock/view',[StockController::class,'StockView'])->name('veiw.stock');
 
 //Stock Edit
  Route::get('/stock/edit/{id}',[StockController::class,'StockEdit'])->name('stock.edit');
 
-
- //Stock Update
+//Stock Update
 Route::post('/stock/update',[StockController::class,'StockUpdate'])->name('stock.update');
 
 //Stock Delete
 Route::post('/stock/delete',[StockController::class,'StockDelete'])->name('stock.delete');
 
 
-//******************Table***************************/
+//*********************************************************  Table    *****************************************************************/
 //Add Table
 Route::get('table/add', [TableController::class, 'TableAdd'])->name('table.add');
 
@@ -280,7 +254,7 @@ Route::post('/table/store', [TableController::class, 'TableStore'])->name('table
 
 
 
-//******************Stock Addjustment*************************** */
+//********************************************************* Stock Addjustment *********************************************************** */
 //Add Stock Addjustment
 Route::get('stock_adj/add', [StockAdjustmentController::class, 'StockAdjustmentAdd'])->name('stock_adj.add');
 
@@ -302,6 +276,8 @@ Route::post('/stock_adj/update',[StockAdjustmentController::class,'StockAdjustme
 //Stock Delete Addjustment
 Route::post('/stock_adj/delete',[StockAdjustmentController::class,'StockAdjustmentDelete'])->name('stock_adj.delete');
 
+
+// Radia
 //*************************************** Customer/User Crud Operation start *************************************//
 
 //User Add
@@ -335,7 +311,6 @@ Route::get('/expenseitem/edit/{id}', [ExpenseController::class, 'ExpenseItemEdit
 Route::post('/expenseitem/update', [ExpenseController::class, 'ExpenseItemUpdate'])->name('expenseitem.update');
 // Expense_Item Delete
 Route::get('/expenseitem/delete/{id}', [ExpenseController::class, 'ExpenseItemDelete'])->name('expenseitem.delete');
-
 
 
     //Expense Crud start
@@ -373,9 +348,42 @@ Route::get('/delete/{id}', [PaymentMethodController::class, 'PaymentDelete'])->n
 
 });
 
+//  ******************************************* Employee Crud Start ************************************** //
+
+//employee Add
+Route::get('/employee/add',[EmployeeController::class , 'EmployeeAdd'])->name('employee.add');
+// employee store 
+Route::post('/employee/store',[EmployeeController::class, 'EmployeeStore'])->name('employee.store');
+// employee View 
+Route::get('/employee/view', [EmployeeController::class, 'EmployeeView'])->name('employee.view');
+// employee Edit
+Route::get('/employee/edit/{id}', [EmployeeController::class, 'EmployeeEdit'])->name('employee.edit');
+// employee Update
+Route::post('/employee/update', [EmployeeController::class, 'EmployeeUpdate'])->name('employee.update');
+// Employee Delete
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'EmployeeDelete'])->name('employee.delete');
+
+//  *********************************** Department Crud start **************************************************//
+
+// dep Add
+Route::get('/dep/add',[DepartmentController::class , 'DepAdd'])->name('dep.add');
+// dep store 
+Route::post('/dep/store',[DepartmentController::class, 'DepStore'])->name('dep.store');
+// // dep View 
+// Route::get('/dep/view', [DepartmentController::class, 'DepView'])->name('dep.view');
+// dep Edit
+Route::get('/dep/edit/{id}', [DepartmentController::class, 'DepEdit'])->name('dep.edit');
+// dep Update
+Route::post('/dep/update', [DepartmentController::class, 'DepUpdate'])->name('update.dep');
+// dep Delete
+Route::get('/dep/delete/{id}', [DepartmentController::class, 'DepDelete'])->name('dep.delete');
 
 
-//////////////////////////  outlet rout //////////////////////////////////////////////////
+
+
+
+
+//////////////////////////  outlet route //////////////////////////////////////////////////
 
 
 // Admin All Brands Route Group 
@@ -393,12 +401,11 @@ Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
     Route::get('outletdeshboard/add', [OutletController::class, 'OutletDeshbord'])->name('outlet.deshbord');
 
     Route::get('/outlet/edit/{id}',[OutletController::class,'OutletEdit'])->name('outlet.edit');
-// outlet Update
+    // outlet Update
     Route::post('/outlet/update',[OutletController::class,'OutletUpdate'])->name('outlet.update');
 
     
-
-    // seting
+    //********************************************************* Setting Crud start **********************************//
 
     Route::get('setting/add', [SettingController::class, 'SettingtAdd'])->name('setting.show');
 

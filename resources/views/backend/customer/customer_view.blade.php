@@ -1,6 +1,6 @@
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 <div class="row" style="margin-top:100px">
@@ -69,8 +69,8 @@
                     <td>{{ $customer->phone }}</td>
                     <td>{{ $customer->address }}</td>
                     <td>
-                        <a href="{{ route('customer.edit',$customer->id) }}" class="btn btn-info" title="Edit">Edit </a>
-                        <a href="{{ route('customer.delete',$customer->id) }}" class="btn btn-info" title="Edit">Delete</i> </a>
+                        <a href="{{ route('customer.edit',$customer->id) }}" class="btn btn-light" title="Edit">Edit </a>
+                        <a href="{{ route('customer.delete',$customer->id) }}" class="btn btn-dark" title="Edit">Delete</i> </a>
                     </td>
                 </tr>
                 
