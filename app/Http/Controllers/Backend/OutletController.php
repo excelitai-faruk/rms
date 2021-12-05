@@ -67,12 +67,12 @@ public function OutletStore(Request $request){
 
 
 
-//Purchase Delete
-public function OutletDelete(Request $request){
-    $outlet = Outlet::findOrfail($request->p_id);
-    $outlet->delete();
-    return redirect()->back();
-    }//end method
+            //Purchase Delete
+            public function OutletDelete(Request $request){
+                $outlet = Outlet::findOrfail($request->p_id);
+                $outlet->delete();
+                return redirect()->back();
+                }//end method
 
 
 
@@ -86,6 +86,7 @@ public function OutletDelete(Request $request){
                 );
                 return view('backend.outlet.edit_outlet', compact('outlet_edit'))->with($notification);
                 }
+                
 
             //Update outlet
             public function OutletUpdate(Request $request){
@@ -108,17 +109,6 @@ public function OutletDelete(Request $request){
 
                 return redirect('outlet/view')->with($notification);
             }//end method
-
-
-
-
-
-           
-
-
-
-
-
 
 
 }

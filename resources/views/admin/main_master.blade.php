@@ -12,7 +12,12 @@
     <title>Riday - Restaurant Bootstrap Admin Template Webapp</title>
     <title>RMS-Restuarent Management System</title>
 
+
 	@yield('css')
+
+
+    <title>Restaurant Bootstrap Admin Template Webapp</title>
+
 
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href=" {{ asset('backend/css/vendors_css.css ') }}">

@@ -30,7 +30,7 @@
 
                     <option value="" selected="" disabled="">Select Expense Item</option>
 
-                    @foreach($expenseitems as $item)
+                    @foreach($expenseite  ms as $item)
                      <option value="{{ $item->id }}" {{ $item->id == $expense_edit->expense_item_id ? 'selected' : ''}} > {{ $item->expense_item_name }} </option>	
                     @endforeach
 
