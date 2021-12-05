@@ -8,7 +8,12 @@
     <div class="col-lg-7">
         <div class="card">
             <div class="card-body">
-            <h4 class="card-title">Ingredient Categories View</h4>
+            <h4 class="card-title">View Ingredient</h4>
+             <!-- <p class="card-title-desc">The Buttons extension for DataTables
+                    provides a common set of options, API methods and styling to display
+                     buttons on a page that will interact with a DataTable. The core library
+                     provides the based framework upon which plug-ins can built.
+                 </p> -->
                 <div id="datatable-buttons_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -28,7 +33,7 @@
                 </div>
                         <div class="col-sm-12 col-md-6"><div id="datatable-buttons_filter" class="dataTables_filter">
                             <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable-buttons"></label>
-                            <a href="{{ route('add.ingredientcategories') }}" class="btn btn-success"> <i class="fas fa-plus"></i>Add Ingredient Categories</a> 
+                            <a href="{{ route('add.ingredient') }}" class="btn btn-success"> <i class="fas fa-plus"></i>Add Ingredient</a> 
                   
                         </div>
                     </div>
@@ -44,16 +49,16 @@
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
                                 aria-label="Address: activate to sort column ascending">Outlet Id</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Contact_Person: activate to sort column ascending">Category Name</th>
+                                aria-label="Contact_Person: activate to sort column ascending">Purchase Price</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Phone: activate to sort column ascending">Description</th>
+                                aria-label="Phone: activate to sort column ascending">Alert Qty</th>
                   
-                                {{-- <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending"
+                                <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending"
                                 aria-label="Name: activate to sort column descending">Unit</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
                                 aria-label="Address: activate to sort column ascending">Code</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Address: activate to sort column ascending">Name</th> --}}
+                                aria-label="Address: activate to sort column ascending">Name</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
                                 aria-label="Action: activate to sort column ascending">Action</th>
                   
@@ -64,16 +69,21 @@
                         </thead>
                             <tbody>
                      
-                                @foreach ($ingredientcategory_view as $Ingredientcategory)
+                                @foreach ($ingredient_view as $ingredient)
                                     <tr>
-                                        <td>{{$Ingredientcategory->id}}</td>
-                                        <td>{{$Ingredientcategory->outlet_id}}</td>
-                                        <td>{{$Ingredientcategory->category_name}}</td>
-                                        <td>{{$Ingredientcategory->description}}</td>
-                                          
+                                        <td>{{$ingredient->id}}</td>
+                                        <td>{{$ingredient->outlet_id}}</td>
+                                        <td>{{$ingredient->purchase_price}}</td>
+                                        <td>{{$ingredient->alert_qty}}</td>
+                                        <td>{{$ingredient->unit}}</td>
+                                        <td>{{$ingredient->code}}</td>
+                                        <td>{{$ingredient->name}}</td>
+                                                   
+                                                    
+                                                
                                         <td>
-                                            <a href="{{ route('edit.ingredientcategories', $Ingredientcategory->id ) }}" class="btn btn-success">Edit</a> 
-                                            <a href="{{ route('delete.ingredientcategories', $Ingredientcategory->id ) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('edit.ingredient', $ingredient->id ) }}" class="btn btn-success">Edit</a> 
+                                            <a href="{{ route('delete.ingredient', $ingredient->id ) }}" class="btn btn-danger">Delete</a>
                                                     
                                         </td> 
                                     </tr>  
