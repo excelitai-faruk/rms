@@ -29,7 +29,10 @@ use App\Http\Controllers\OrderListController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Backend\FoodMenuCategoryController;
+use App\Http\Controllers\Backend\FoodMenuController;
 use App\Http\Controllers\Backend\IngredientCategoriesController;
+use App\Http\Controllers\Backend\IngredientUnitsController;
+use App\Http\Controllers\Backend\IngredientController;
 
 
 use App\Http\Controllers\Backend\OutletController;
@@ -43,6 +46,8 @@ use App\Http\Controllers\Backend\FoodVarientController;
 
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\PaymentMethodController;
+
+
 
 
 
@@ -136,31 +141,64 @@ Route::prefix('superadmin')->name('superadmin.')->group(function(){
 
 //////////////////////////////////  Food Menu Category Start //////////////////////////////////////////////
 
-//Food Menu Add
+//Food Menu Category Add
 Route::get('/add/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryAdd'])->name('add.foodmenucategory');
 
-//Food Menu Store
+//Food Menu Category Store
 
 Route::post('/store/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryStore'])->name('store.foodmenucategory');
 
-//Food Menu View
+//Food Menu Category View
 
 Route::get('/view/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryView'])->name('view.foodmenucategory');
 
-//Food Menu Edit
+//Food Menu Category Edit
 
 Route::get('/edit/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryEdit'])->name('edit.foodmenucategory');
 
-//Food Menu Update
+//Food Menu Category Update
 
 Route::post('/update/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryUpdate'])->name('update.foodmenucategory');
 
-//Food Menu Delete
+//Food Menu Category Delete
 
 Route::get('/delete/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCategoryDelete'])->name('delete.foodmenucategory');
 
 
 //////////////////////////////////  Food Menu Category End //////////////////////////////////////////////
+
+
+//////////////////////////////////  Food Menu Start ////////////////////////////////////////////////////
+
+
+//Food Menu Add
+
+Route::get('/add/menu',[FoodMenuController::class, 'FoodMenuAdd'])->name('add.menu');
+
+//Food Menu Store
+
+Route::post('/store/menu',[FoodMenuController::class, 'FoodMenuStore'])->name('store.menu');
+
+//Food Menu View
+
+Route::get('/view/menu',[FoodMenuController::class, 'FoodMenuView'])->name('view.menu');
+
+//Food Menu Edit
+
+Route::get('/edit/{id}/menu',[FoodMenuController::class,'FoodMenuEdit'])->name('edit.menu');
+
+//Food Menu Update
+
+Route::post('/update/menu',[FoodMenuController::class,'FoodMenuUpdate'])->name('update.menu');
+
+
+
+
+
+
+//////////////////////////////////  Food Menu End ////////////////////////////////////////////////////
+
+
 
 
 
@@ -172,28 +210,28 @@ Route::get('/delete/{id}/foodmenu',[FoodMenuCategoryController::class, 'FoodCate
 
 //Ingredient Categories Add
 
-Route::get('/add/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesAdd'])->name('add.ingredientcategories');
+Route::get('/add/ingredientcategory',[IngredientCategoriesController::class, 'IngredientCategoriesAdd'])->name('add.ingredientcategories');
 
 //Ingredient Categories Store
 
-Route::post('/store/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesStore'])->name('store.ingredientcategories');
+Route::post('/store/ingredientcategory',[IngredientCategoriesController::class, 'IngredientCategoriesStore'])->name('store.ingredientcategories');
 
-//View
+//Ingredient Categories View
 
-Route::get('/view/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesView'])->name('view.ingredientcategories');
+Route::get('/view/ingredientcategory',[IngredientCategoriesController::class, 'IngredientCategoriesView'])->name('view.ingredientcategories');
 
 //Ingredient Categories  Edit
 
-Route::get('/edit/{id}/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesEdit'])->name('edit.ingredientcategories');
+Route::get('/edit/{id}/ingredientcategory',[IngredientCategoriesController::class, 'IngredientCategoriesEdit'])->name('edit.ingredientcategories');
 
 //Ingredient Categories  Update
 
-Route::post('/update/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesUpdate'])->name('update.ingredientcategories');
+Route::post('/update/ingredientcategory',[IngredientCategoriesController::class, 'IngredientCategoriesUpdate'])->name('update.ingredientcategories');
 
 
-//Food Menu Delete
+//Ingredient Categories Delete
 
-Route::get('/delete/{id}/ingredient',[IngredientCategoriesController::class, 'IngredientCategoriesDelete'])->name('delete.ingredientcategories');
+Route::get('/delete/{id}/ingredientcategory',[IngredientCategoriesController::class, 'IngredientCategoriesDelete'])->name('delete.ingredientcategories');
 
 
 
@@ -202,15 +240,71 @@ Route::get('/delete/{id}/ingredient',[IngredientCategoriesController::class, 'In
 
 
 
-/////////////////////////////////////  Ingredient Unit  //////////////////////////////////////////////////
+/////////////////////////////////////  Ingredient Unit Start //////////////////////////////////////////////////
 
 //Ingredient Unit Add
 
-Route::get('/add/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsAdd'])->name('add.ingredientunits');
+ Route::get('/add/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsAdd'])->name('add.ingredientunits');
 
 //Ingredient Unit Store
 
-Route::post('/store/ingredientunit',[IngredientUnitsController::class, 'IngredientCategoriesStore'])->name('store.ingredientunits');
+Route::post('/store/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsStore'])->name('store.ingredientunits');
+
+//Ingredient Unit View
+
+Route::get('/view/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsView'])->name('view.ingredientunits');
+
+//Ingredient Unit Edit
+
+Route::get('/edit/{id}/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsEdit'])->name('edit.ingredientunits');
+
+//Ingredient Unit Update
+
+Route::post('/update/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsUpdate'])->name('update.ingredientunits');
+
+//Ingredient Unit Delete
+
+Route::get('/delete/{id}/ingredientunit',[IngredientUnitsController::class, 'IngredientUnitsDelete'])->name('delete.ingredientunits');
+
+/////////////////////////////////////  Ingredient Unit End //////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////  Ingredient Start ////////////////////////////////////////////////////
+
+//Ingredient Add
+
+Route::get('/add/ingredient',[IngredientController::class, 'IngredientAdd'])->name('add.ingredient');
+
+//Ingredient Store
+
+Route::post('/store/ingredient',[IngredientController::class, 'IngredientStore'])->name('store.ingredient');
+
+//Ingredient View
+
+Route::get('/view/ingredient',[IngredientController::class, 'IngredientView'])->name('view.ingredient');
+
+//Ingredient Edit
+
+Route::get('/edit/{id}/ingredient',[IngredientController::class, 'IngredientEdit'])->name('edit.ingredient');
+
+//Ingredient Update
+
+Route::post('/update/ingredient',[IngredientController::class, 'IngredientUpdate'])->name('update.ingredient');
+
+//Ingredient Unit Delete
+
+Route::get('/delete/{id}/ingredient',[IngredientController::class, 'IngredientDelete'])->name('delete.ingredient');
+
+
+
+
+
+/////////////////////////////////////  Ingredient End ////////////////////////////////////////////////////
+
+
+
 
 
 

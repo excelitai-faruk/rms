@@ -1,10 +1,3 @@
-<h1>Hi Eqramul</h1>
-
-
-
-
-<h1>Hello</h1>
-
 @extends('admin.main_master')
 
 
