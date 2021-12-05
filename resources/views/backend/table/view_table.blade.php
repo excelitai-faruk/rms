@@ -1,13 +1,13 @@
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
             <div class="row form-gap" style="margin-top:100px">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">View Stock Adjustment</h4>
+                        <h4 class="card-title">View Table</h4>
                          
                         <div id="datatable-buttons_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                             <div class="row">
@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="col-sm-12 col-md-6"><div id="datatable-buttons_filter" class="dataTables_filter">
                                             <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable-buttons"></label>
-                                            <a href="{{ route('stock_adj.add') }}" class="btn btn-success">Add Stock Adjustment</a> 
+                                            <a href="{{ route('table.add') }}" class="btn btn-success">Add Table</a> 
 
                                         </div>
                                     </div>
@@ -40,79 +40,42 @@
                             <thead>
                                 <tr role="row">
                                 <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">SN</th>
+                                aria-label="Name: activate to sort column descending">Outlet_Id</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Address: activate to sort column ascending">Reference_No</th>
+                                aria-label="Address: activate to sort column ascending">table_name</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                 aria-label="Contact_Person: activate to sort column ascending">Date</th>
+                                 aria-label="Contact_Person: activate to sort column ascending">seat_capacity</th>
                                  <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                  aria-label="Phone: activate to sort column ascending">Unit</th>
-
-                                  {{-- $table->string('sn');
-                                  $table->string('reference_no');
-                                  $table->string('date');
-                                  $table->string('unit');
-                                  $table->string('responsible_person');
-                                  $table->string('note');
-                                  $table->string('added_by');
-                                  $table->string('action');
-                                  $table->timestamps(); --}}
-
-
+                                  aria-label="Phone: activate to sort column ascending">description</th>
 
                                   <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Address: activate to sort column ascending">Responsible_Person</th>
+                                aria-label="Address: activate to sort column ascending">position</th>
 
-                                <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                 aria-label="Contact_Person: activate to sort column ascending">Note</th>
-
-                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                  aria-label="Phone: activate to sort column ascending">Added_by</th>
-
-                                  
+                                
                                   <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
                                   aria-label="Action: activate to sort column ascending">Action</th>
                             </thead>
                             <tbody>
 
-                                {{-- 
-    
-    
-    $table->id();
-            $table->string('sn');
-            $table->string('reference_no');
-            $table->string('date');
-            $table->string('unit');
-            $table->string('responsible_person');
-            $table->string('note');
-            $table->string('added_by');
-            $table->string('action');
-            $table->timestamps();
-    
-    
-    --}}
-
                                 
-                              @foreach ($stock_adj_view as $stock_adj )
+                              @foreach ($table_view as $t_view )
                                         <tr>
                                           
-                                          <td>{{$stock_adj->sn}}</td>
-                                          <td>{{$stock_adj->reference_no}}</td>
-                                          <td>{{$stock_adj->date}}</td>
-                                          <td>{{$stock_adj->unit}}</td>
-                                          <td>{{$stock_adj->responsible_person}}</td>
-                                          <td>{{$stock_adj->note}}</td>
-                                          <td>{{$stock_adj->added_by}}</td>
+                                          <td>{{$t_view->outlet_id}}</td>
+                                          <td>{{$t_view->table_name}}</td>
+                                          <td>{{$t_view->seat_capacity}}</td>
+                                          <td>{{$t_view->description}}</td>
+                                          <td>{{$t_view->position}}</td>
                                          
                                           
                                           
                                     
                                             <td style="display:flex"> 
-                                             <a href="{{ route('stock_adj.edit', $stock_adj->id ) }}" class="btn btn-success">Edit</a> 
+                                             <a style="margin: 0px 6px" href="{{ route('table.edit', $t_view->id ) }}" class="btn btn-success">Edit</a> 
 
-                                            <form action="{{route('stock_adj.delete')}}" method="POST">
+                                            <form action="{{ route('table.delete', $t_view->id ) }}" method="POST">
                                                 @csrf
-                                                <input type="hidden" name="p_id" id="p_id" value="{{$stock_adj->id}}">
+                                                <input type="hidden" name="p_id" id="p_id" value="{{$t_view->id}}">
                                                 <button class="btn btn-danger deleteButton" name="archive" type="submit">Delete</button>
                                             </form>
                                         </td>     

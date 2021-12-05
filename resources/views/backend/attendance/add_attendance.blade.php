@@ -1,13 +1,9 @@
-
-
-hi stock
+Add attendance
 
 
 
 
-@extends('admin.main_master')
-
-
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left:450px" >
@@ -21,21 +17,20 @@ hi stock
       <div class="row">
         <div class="col-6">
       
-          <form action="{{route('stock.update')}}" method="POST"> 
+          <form action="{{route('stock.store')}}" method="POST">
             
                 @csrf
-                <input type="hidden" name="id" value="{{$stock_edit->id}}">
-                <h2 class="box-title">Update Stock</h2>
+                <h2 class="box-title">Add Attendance</h2>
             <div class="form-group row">
               <label for="example-text-input" class="col-sm-2 col-form-label">Ingredient (Code)</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->code}}" name="code" id="">
+                <input class="form-control" type="text" value="" name="code" id="">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-search-input" class="col-sm-2 col-form-label">Category</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->category}}" name="category" id="">
+                <input class="form-control" type="text" name="category" id="">
               </div>
             </div>
 
@@ -56,14 +51,14 @@ hi stock
             <div class="form-group row">
               <label for="example-email-input" class="col-sm-2 col-form-label">Stock Amount</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->unit}}" name="unit" id="">
+                <input class="form-control" type="text" value="" name="unit" id="">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->alert_qty}}" name="alert_qty" id="">
+                <input class="form-control" type="text" value="" name="alert_qty" id="">
               </div>
             </div>
 

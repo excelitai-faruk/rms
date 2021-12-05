@@ -9,13 +9,13 @@
     <div class="card-body">
         <div class="row">
             <div class="col-lg-3">
-            <p>
-                Add purches</p>    
+             
             </div>
           <div class="col-lg-6">
            
             <form action="{{route('purchase.update')}}" method="POST">
                 @csrf
+                <h1>Update Purchase</h1>
                 <input type="hidden" name="id" value="{{$purchase_edit->id}}">
 
                 <div class="form-group row">

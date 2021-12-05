@@ -25,7 +25,7 @@ hi stock
             <form action="{{route('stock_adj.update')}}" method="POST">
                 @csrf
                 <input type="hidden" name="id" value="{{$stock_adjustment_edit->id}}">
-                <h2 class="box-title">Add Stock Adjustment</h2>
+                <h2 class="box-title">Update Stock Adjustment</h2>
                 
             <div class="form-group row">
               <label for="example-text-input" class="col-sm-2 col-form-label">SN</label>

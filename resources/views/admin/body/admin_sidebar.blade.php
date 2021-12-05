@@ -46,6 +46,7 @@
 					<li><a href="menu_categories.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Waiter</a></li>
 				  </ul>
 				</li>
+
 				<li class="treeview">
 					<a href="#">
 					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
@@ -65,7 +66,38 @@
 				  </li> 
 
 
+
+
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+					  <span>Reservation</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+					<ul class="treeview-menu">
+					  <li><a href="{{route('reservation.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Reservation</a></li>
+					  <li><a href="{{route('reservation.add')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Reservation</a></li>
+					  <li><a href="{{route('unavailable_day.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Unavailable Day</a></li>
+					  <li><a href="{{route('reservation_setting.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Reservation Setting</a></li>
+					  
+  
+					</ul>
+				  </li> 
+
+
+
+
+
+
+
+
+
+	
+
 				<li class="treeview">
+
 					<a href="#">
 					  <i class="icon-Clipboard"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
 					  <span>Manage Food Menu</span>
@@ -164,52 +196,33 @@
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Supplier</span>
 					</a>
-
-				  </li>
-
-
-
-				  <li class="treeview">
-					<a href="#">
-					  <i class="icon-Chat-locked"><span class="path1"></span><span class="path2"></span></i>
-					  <span>Manage Customer</span>
-					  <span class="pull-right-container">
-						<i class="fa fa-angle-right pull-right"></i>
-					  </span>
-
 				</li>
 				<li>
 					<a href="analysis.html">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Coustomer</span>
-
 					</a>
+
 					<ul class="treeview-menu">
 					  <li><a href="{{ route('customer.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Customer</a></li>
 					  <li><a href="{{ route('customer.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Customer</a></li>					 
 					</ul>
 				</li>
 
-				 
 
 
 				<li>
-					<a href="analysis.html">
+					<a href="{{route('table.view')}}">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Table</span>
 					</a>
-
-				  </li>
-
+				</li>
 				<li>
-						<a href="{{ route('payment.view') }}">
-
+					<a href="analysis.html">
 					  <i class="icon-Chart-line"><span class="path1"></span><span class="path2"></span></i>
 					  <span>Manage Payment Method</span>
-					  
 					</a>
 				  </li>
-
 
 				<li>
 				  <a href="analysis.html">
@@ -268,7 +281,6 @@
 
 
 
-
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-Chat-check"><span class="path1"></span><span class="path2"></span></i>
@@ -278,9 +290,9 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="{{ route('expenseitem.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense Items</a></li>
-					<li><a href="{{ route('expense.add') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense</a></li>
-					<li><a href="{{ route('expense.view') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Expense</a></li>		
+					<li><a href="error_40          4.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense Items</a></li>
+					<li><a href="error_404.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Add Expense</a></li>
+					<li><a href="error_500.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>View Expense</a></li>		
 				  </ul>
 				</li> 
 				<li class="treeview">
@@ -292,7 +304,7 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="extra_app_ticket.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Supplier Due Payments</a></li>
+					<li><a href="{{route('supplier_p_due.view')}}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Supplier Due Payments</a></li>
 					<li><a href="extra_profile.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>Coustomer Due Payments</a></li>
 				  </ul>
 				</li>	

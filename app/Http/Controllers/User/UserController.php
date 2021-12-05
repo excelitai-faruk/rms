@@ -114,6 +114,7 @@ class UserController extends Controller
     // Customer View
     public function CustomerView(){
         $customers = User::latest()->get();
+        dd($customers);
         return view ('backend.customer.customer_view',compact('customers'));
     }
 

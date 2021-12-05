@@ -1,14 +1,10 @@
-Hi This is Table
 
 
 
 
 
 
-
-@extends('admin.main_master')
-
-
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left:450px" >
@@ -32,6 +28,7 @@ Hi This is Table
                 <input class="form-control" type="text" value="" name="outlet_id" id="">
               </div>
             </div>
+
             <div class="form-group row">
               <label for="example-search-input" class="col-sm-2 col-form-label">Table Name</label>
               <div class="col-sm-10">
@@ -39,32 +36,24 @@ Hi This is Table
               </div>
             </div>
 
-{{-- 
-    
-    
-   $table->id();
-            $table->string('outlet_id');
-            $table->string('table_name');
-            $table->string('seat_capacity');
-            $table->string('description');
-            $table->string('position');
-            $table->timestamps();
-    
-    
-    --}}
-
-
             <div class="form-group row">
               <label for="example-email-input" class="col-sm-2 col-form-label">SeaT Capacity</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="" name="unit" id="">
+                <input class="form-control" type="text" value="" name="seat_capacity" id="">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="example-email-input" class="col-sm-2 col-form-label">Description</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" value="" name="description" id="">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="" name="alert_qty" id="">
+                <input class="form-control" type="text" value="" name="position" id="">
               </div>
             </div>
 

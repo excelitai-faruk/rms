@@ -1,13 +1,12 @@
+unava
+
+Adding reservation
 
 
-hi stock
 
 
 
-
-@extends('admin.main_master')
-
-
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left:450px" >
@@ -21,51 +20,44 @@ hi stock
       <div class="row">
         <div class="col-6">
       
-          <form action="{{route('stock.update')}}" method="POST"> 
+          <form action="{{route('unavailable_day.store')}}" method="POST">
             
                 @csrf
-                <input type="hidden" name="id" value="{{$stock_edit->id}}">
-                <h2 class="box-title">Update Stock</h2>
+                <h2 class="box-title">Add Unavailable Day</h2>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Ingredient (Code)</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">SI</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->code}}" name="code" id="">
+                <input class="form-control" type="text" value="" name="si" id="">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Category</label>
+              <label for="example-search-input" class="col-sm-2 col-form-label">unavailable_date</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->category}}" name="category" id="">
+                <input class="form-control" type="date" name="unavailable_date" id="">
               </div>
             </div>
 
 {{-- 
     
     
-    $table->id();
-            $table->string('code');
-            $table->string('category');
-            $table->string('unit');
-            $table->string('alert_qty');
-            $table->timestamps();
-    
+   
+        //     $table->id();
+        //     $table->string('si');
+        //    $table->date('unavailable_date');
+        //     $table->time('available_time');
+        //     $table->timestamps();
     
     --}}
 
 
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Stock Amount</label>
+              <label for="example-email-input" class="col-sm-2 col-form-label">available_time</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->unit}}" name="unit" id="">
+                <input class="form-control" type="time" value="" name="available_time" id="">
               </div>
             </div>
 
-            <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->alert_qty}}" name="alert_qty" id="">
-              </div>
-            </div>
+            
 
             <button type="submit" class="btn btn-primary">Submit</button>
 

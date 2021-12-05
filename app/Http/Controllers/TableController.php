@@ -35,25 +35,19 @@ public function TableStore(Request $request){
                 
             ]);
 
-            // $table->id();
-            // $table->string('outlet_id');
-            // $table->string('table_name');
-            // $table->string('seat_capacity');
-            // $table->string('description');
-            // $table->string('position');
-            // $table->timestamps();
+          
        
         
     //data insert
-    Purchase::insert(
+    Table::insert(
     
      [ 
          
         'outlet_id'=>$request->outlet_id,
-        'table_name'=>$request->reference_no,
-        'seat_capacity'=>$request->supplier,
-        'description'=>$request->ingredients,
-       'position'=>$request->date,
+        'table_name'=>$request->table_name,
+        'seat_capacity'=>$request->seat_capacity,
+        'description'=>$request->description,
+       'position'=>$request->position,
         
      ]
     
@@ -65,24 +59,74 @@ public function TableStore(Request $request){
     );
 
     
-     return redirect()->back->with($notification);
-    
+    return redirect()->back()->with ($notification);
+        
          
     }//end method
 
 
+    //View Table
+
+    public function TableView(){
+        $table_view = Table::latest()->get();
+        return view('backend.table.view_table',compact('table_view'));
+    }//end method
+
+
+//Edit Table
+public function TableEdit($id){
+
+    $table_edit= Table:: findOrfail($id);
+    return view('backend.table.edit_table', compact('table_edit'));
+    
+    }//end method
+
+
+    //Update Table
+public function TableUpdate(Request $request){
+    $table_update = $request->id;
+       
+    //update date
+    Table::findOrfail($table_update)->update(
+        [  
+             'outlet_id'=>$request->outlet_id,
+             'table_name'=>$request->table_name,
+             'seat_capacity'=>$request->seat_capacity,
+             'description'=>$request->description,
+             'position'=>$request->position,
+            
+     ]
 
 
 
+    
+    );
+
+
+    $notification = array(
+        'message' =>  'Table Add Sucessyfuly',
+        'alert-type' => 'success'
+    );
+    
+    return redirect('table/view')->with($notification);
+    
+    }//end method
 
 
 
+//Table Delete
 
 
+public function TableDelete(Request $request){
 
+    $table_delete = Table::findOrfail($request->p_id);
+    $table_delete->delete();
 
+    return redirect()->back();
+    
 
-
+    
+    }//end method
 
 
 

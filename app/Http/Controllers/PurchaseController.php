@@ -48,7 +48,7 @@ class PurchaseController extends Controller
     Purchase::insert(
     
      [ 
-         
+        'sn'=>$request->sn,
         'outlet_id'=>$request->outlet_id,
         'reference_no'=>$request->reference_no,
         'supplier'=>$request->supplier,
@@ -57,7 +57,7 @@ class PurchaseController extends Controller
         'grand_total'=>$request->grand_total,
         'paid'=>$request->paid,
         'due'=>$request->due,
-        'sn'=>$request->sn,
+        
      ]
     
      );

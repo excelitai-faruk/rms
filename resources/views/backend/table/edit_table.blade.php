@@ -1,6 +1,7 @@
+Hi This is Table
 
 
-hi stock
+
 
 
 
@@ -21,32 +22,34 @@ hi stock
       <div class="row">
         <div class="col-6">
       
-          <form action="{{route('stock.update')}}" method="POST"> 
+            <form action="{{route('table.update')}}" method="POST" enctype="multipart/form-data" >
             
                 @csrf
-                <input type="hidden" name="id" value="{{$stock_edit->id}}">
-                <h2 class="box-title">Update Stock</h2>
+                <h4 class="box-title">Update Table</h4>
+                <input type="hidden" name="id" value="{{$table_edit->id}}">  
+                <h2 class="box-title">Add Table</h2>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Ingredient (Code)</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Outle ID</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->code}}" name="code" id="">
+                <input class="form-control" type="text" value="{{$table_edit->outlet_id}}" name="outlet_id" id="">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Category</label>
+              <label for="example-search-input" class="col-sm-2 col-form-label">Table Name</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->category}}" name="category" id="">
+                <input class="form-control" type="text" value="{{$table_edit->table_name}}" name="table_name" id="">
               </div>
             </div>
 
 {{-- 
     
     
-    $table->id();
-            $table->string('code');
-            $table->string('category');
-            $table->string('unit');
-            $table->string('alert_qty');
+   $table->id();
+            $table->string('outlet_id');
+            $table->string('table_name');
+            $table->string('seat_capacity');
+            $table->string('description');
+            $table->string('position');
             $table->timestamps();
     
     
@@ -54,16 +57,24 @@ hi stock
 
 
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Stock Amount</label>
+              <label for="example-email-input" class="col-sm-2 col-form-label">SeaT Capacity</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->unit}}" name="unit" id="">
+                <input class="form-control" type="text" value="{{$table_edit->seat_capacity}}" name="seat_capacity" id="">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
+              <label for="example-email-input" class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->alert_qty}}" name="alert_qty" id="">
+                <input class="form-control" type="text" value="{{$table_edit->description}}" name="description" id="">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="example-email-input" class="col-sm-2 col-form-label">Position</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" value="{{$table_edit->position}}" name="position" id="">
               </div>
             </div>
 

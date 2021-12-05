@@ -5,22 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Purchase extends Model
+class Reservation extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
-        'sn',
-        'outlet_id',
-        'reference_no',
-        'supplier',
-        'ingredients',
+        'si',
+        'customer_name',
+        'table_no',
+        'person_number',
+        'start_time',
+        'end_time',
         'date',
-        'grand_total',
-        'paid',
-        'due',
-       
+        'status',
         
     ];
+
+
+
+
+
 }
- 
