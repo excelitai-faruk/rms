@@ -36,10 +36,6 @@
 
                  </select>
 
-                     {{--  @error('expense_item_id') 
-                     <span class="text-danger">{{ $message }}</span>
-                     @enderror  --}}
-
 
                  </div>
                                         

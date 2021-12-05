@@ -24,7 +24,7 @@
 
     <title>Restaurant Bootstrap Admin Template Webapp</title>
 
-
+	@yield('css')
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href=" {{ asset('backend/css/vendors_css.css ') }}">
 	  
