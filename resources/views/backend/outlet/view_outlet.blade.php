@@ -36,8 +36,8 @@
                     <td>{{ $item->invoice_print }}</td>
                     
                     <td style="display: flex">
-             <a style="width: 55px;height: 38px;margin-right: 10px;" href="{{ route('outlet.edit', $item->id ) }}" class="btn btn-success">Edit</a> 
-                        
+                      <a style="width: 55px;height: 38px;margin-right: 10px;" href="{{ route('outlet.edit', $item->id ) }}" class="btn btn-success">Edit</a> 
+                                  
 
 
                         {{-- <a href="{{ route('outlet.delete', $item->id ) }}" class="btn btn-danger" id="#">Delete</a> --}}

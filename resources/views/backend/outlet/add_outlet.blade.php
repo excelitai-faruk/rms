@@ -27,13 +27,13 @@
             <div class="form-group row">
               <label for="example-email-input" class="col-sm-2 col-form-label">Phone</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" name="phone" value="phone" id="example-email-input">
+                <input class="form-control" type="number" name="phone" value="phone" id="example-email-input">
               </div>
             </div>
             <div class="form-group row">
               <label for="example-url-input" class="col-sm-2 col-form-label">Collect_vat</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" name="collect_vat" value="collect_vat" id="example-url-input">
+                <input class="form-control" type="number" name="collect_vat" value="collect_vat" id="example-url-input">
               </div>
             </div>
             <div class="form-group row">
