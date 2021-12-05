@@ -1,6 +1,6 @@
-<h1>Hello</h1>
 
-@extends('admin.main_master')
+
+@include('admin.main_master')
 
 
 

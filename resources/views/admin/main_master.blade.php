@@ -9,22 +9,16 @@
     <meta name="author" content="">
     <link rel="icon" href="https://riday-admin-template.multipurposethemes.com/bs5/images/favicon.ico">
 
-
-	{{--  toaster alert link  --}}
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
-     alpha/css/bootstrap.css" rel="stylesheet">
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<link rel="stylesheet" type="text/css" 
-     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-	
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <title>Riday - Restaurant Bootstrap Admin Template Webapp</title>
+    <title>RMS-Restuarent Management System</title>
+
+
+	@yield('css')
+
 
     <title>Restaurant Bootstrap Admin Template Webapp</title>
 
-	@yield('css')
+
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href=" {{ asset('backend/css/vendors_css.css ') }}">
 	  
@@ -32,7 +26,27 @@
 	<link rel="stylesheet" href=" {{ asset('backend/css/style.css ') }}">
 	<link rel="stylesheet" href=" {{ asset('backend/css/skin_color.css ') }}">
 
-     
+		{{--  toaster alert link  --}}
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
+		alpha/css/bootstrap.css" rel="stylesheet">	   
+	   
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
+	   
+		<link rel="stylesheet" type="text/css" 
+		href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">	   
+	   
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   
+	
+	
+   
+    
+	 
+
+
+
+
+
   </head>
 
 <body class="hold-transition light-skin sidebar-mini theme-primary fixed">
@@ -64,14 +78,14 @@
 
  
 
-  <!-- Content Wrapper. Contains page content -->
+  {{-- <!-- Content Wrapper. Contains page content --> --}}
   {{-- <div class="content-wrapper"> --}}
 
     @yield('content')
 
 
   {{-- </div> --}}
-  <!-- /.content-wrapper -->
+  {{-- <!-- /.content-wrapper --> --}}
 
 
 
@@ -88,37 +102,47 @@
 
 
   
-  <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
+   {{-- <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar --> --}}
+   
+   <div class="control-sidebar-bg"></div>
   
 {{-- </div> --}}
-<!-- ./wrapper -->
+{{-- <!-- ./wrapper --> --}}
 	
 	<!-- ./side demo panel -->
 	<div class="sticky-toolbar">	    
 	    <a href="https://themeforest.net/item/riday-restaurant-bootstrap-admin-template-webapp/31603200" data-bs-toggle="tooltip" data-bs-placement="left" title="Buy Now" class="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
 			<span class="icon-Money"><span class="path1"></span><span class="path2"></span></span>
 		</a>
-	    <a href="https://themeforest.net/user/multipurposethemes/portfolio" data-bs-toggle="tooltip" data-bs-placement="left" title="Portfolio" class="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
-			<span class="icon-Image"></span>
-		</a>
-	    <a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat" class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
+
+		<a href="https://themeforest.net/user/multipurposethemes/portfolio" data-bs-toggle="tooltip" data-bs-placement="left" title="Portfolio" class="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
+            <span class="icon-Image"></span>
+        </a>
+	    
+		<a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat" class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
 			<span class="icon-Group-chat"><span class="path1"></span><span class="path2"></span></span>
 		</a>
 	</div>
-	<!-- Sidebar -->
+	{{-- <!-- Sidebar --> --}}
 		
 
 	
-	<!-- Page Content overlay -->
+	{{-- <!-- Page Content overlay --> --}}
 	
 
-	<!-- Vendor JS -->
+	{{-- <!-- Vendor JS --> --}}
 	<script src=" {{ asset('backend/js/vendors.min.js ') }} "></script>
 	<script src=" {{ asset('backend/js/pages/chat-popup.js ') }} "></script>
 	<script src=" {{ asset('backend/assets/vendor_components/apexcharts-bundle/dist/apexcharts.min.js ') }} "></script>
-    <script src=" {{ asset('backend/assets/icons/feather-icons/feather.min.js ') }} "></script>
-		
+    <script src=" {{ asset('backend/assets/icons/feather-icons/feather.min.js ') }} "></script>		
+
+	{{--  step form js  --}}
+	<script src=" {{ asset('../assets/vendor_components/jquery-steps-master/build/jquery.steps.js ') }} "></script>
+    <script src=" {{ asset('../assets/vendor_components/jquery-validation-1.17.0/dist/jquery.validate.min.js ') }} "></script>
+    <script src=" {{ asset('../assets/vendor_components/sweetalert/sweetalert.min.js ') }} "></script>
+	<script src="{{ asset('backend/js/pages/steps.js') }}"></script>
+	{{--  step form js  --}}
+
 
 	<script src=" {{ asset('backend/assets/vendor_components/OwlCarousel2/dist/owl.carousel.js ') }} "></script>
 	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/core.js ') }} "></script>
@@ -129,27 +153,25 @@
 	<script src=" {{ asset('../../../cdn.amcharts.com/lib/4/themes/animated.js ') }} "></script>
 
 	<script src=" {{ asset('/backend/assets/vendor_components/OwlCarousel2/dist/owl.carousel.js ') }} "></script>
-
-
-
-
-	// data table script
 	<script src="{{ asset('../backend/assets/vendor_components/datatable/datatables.min.js ')}}"></script>
 
 	
-	<!-- Riday Admin App -->
+	{{-- <!-- Riday Admin App --> --}}
 	<script src=" {{ asset('backend/js/template.js ') }} "></script>
 	<script src=" {{ asset('backend/js/pages/dashboard.js ') }} "></script>
 
 
-	// data table script
+
+
+	
+
+
+
+
+
+	{{--  // data table script  --}}
 	<script src="{{ asset('backend/js/pages/data-table.js') }}"></script>
-
-
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-
 
 	<script>
 		@if(Session::has('message'))
@@ -195,8 +217,18 @@
 
 
 
-	
+
+
+
+
+
 </body>
 
 </html>
 	
+
+
+
+
+
+

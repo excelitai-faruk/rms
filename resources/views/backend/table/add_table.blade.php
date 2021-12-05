@@ -1,12 +1,5 @@
-Hi This is Table
 
-
-
-
-
-
-
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 

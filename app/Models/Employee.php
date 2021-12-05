@@ -17,11 +17,55 @@ class Employee extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'outlet_id',
         'name',
-        'hospital',
         'email',
         'password',
+
+        'father_name',
+        'mother_name',
+        'dob',
+        'gender',
+        'maritial_status',
+        'phone',
+        'e_phone',
+        'address',
+        'par_address',
+        'image',
+
+        'employee_id',
+        'department',
+        'designation',
+        'doj',
+        'salary',
+        'nid',
+        'a_qua',
+        'p_qua',
+        'experience',
+
+        'acc_name',
+        'acc_num',
+        'bank_name',
+        'branch',
+        'code',
+        'file',
+        'agfile',
+
+
     ];
+
+
+    // // Outlet Relationships
+    // public function outlet(){
+    //     return $this->belongsTo(Outlet::class,'outlet_id','id');
+    // }
+
+    
+    // Department Relationships
+    public function dep(){
+        return $this->belongsTo(Department::class,'department','id');
+    }
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -41,4 +85,10 @@ class Employee extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+
+
+
 }

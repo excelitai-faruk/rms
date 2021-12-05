@@ -1,12 +1,7 @@
-adjustment
-
-
-hi stock
 
 
 
-
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 
