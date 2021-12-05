@@ -1,13 +1,9 @@
-
-
-hi stock
+adding order
 
 
 
 
-@extends('admin.main_master')
-
-
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left:450px" >
@@ -21,51 +17,105 @@ hi stock
       <div class="row">
         <div class="col-6">
       
-          <form action="{{route('stock.update')}}" method="POST"> 
+          <form action="{{route('order_list.store')}}" method="POST">
             
                 @csrf
-                <input type="hidden" name="id" value="{{$stock_edit->id}}">
-                <h2 class="box-title">Update Stock</h2>
+                <h2 class="box-title">Add Order </h2>
+
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Ingredient (Code)</label>
+
+              <label for="example-text-input" class="col-sm-2 col-form-label">SI</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->code}}" name="code" id="">
+                <input class="form-control" type="number" value="" name="si" id="">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Category</label>
+              <label for="example-search-input" class="col-sm-2 col-form-label">invoice_no</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->category}}" name="category" id="">
+                <input class="form-control" type="number" name="invoice_no" id="">
               </div>
             </div>
 
 {{-- 
-    
-    
-    $table->id();
-            $table->string('code');
-            $table->string('category');
-            $table->string('unit');
-            $table->string('alert_qty');
-            $table->timestamps();
-    
-    
+     $table->string('si');
+            $table->string('invoice_no');
+            $table->string('name');//uder table
+            $table->string('designation');//employee table
+            $table->time('table_name');//table table
+            $table->time('state');
+            $table->time('order_date');
+            $table->time('amount');
     --}}
 
 
+
+
+
+    <div class="form-group row">
+      <label for="example-email-input" class="col-sm-2 col-form-label">customer_name</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" value="" name="customer_name" id="">
+      </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+{{-- 
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Stock Amount</label>
+              <label for="example-email-input" class="col-sm-2 col-form-label">name</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->unit}}" name="unit" id="">
+                <input class="form-control" type="text" value="" name="name" id="">
+              </div>
+            </div> --}}
+
+            <div class="form-group row">
+              <label for="example-email-input" class="col-sm-2 col-form-label">designation</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" value="" name="designation" id="">
               </div>
             </div>
 
+
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->alert_qty}}" name="alert_qty" id="">
+                <label for="example-email-input" class="col-sm-2 col-form-label">table_name</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" value="" name="table_name" id="">
+                </div>
               </div>
-            </div>
+  
+              <div class="form-group row">
+                <label for="example-email-input" class="col-sm-2 col-form-label">state</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" value="" name="state" id="">
+                </div>
+              </div>
+
+
+              
+            <div class="form-group row">
+                <label for="example-email-input" class="col-sm-2 col-form-label">order_date</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="date" value="" name="order_date" id="">
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="example-email-input" class="col-sm-2 col-form-label">amount</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="number" value="" name="amount" id="">
+                </div>
+              </div>
+  
+
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
 

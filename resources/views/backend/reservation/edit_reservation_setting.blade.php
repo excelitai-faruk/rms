@@ -1,13 +1,14 @@
-
-
-hi stock
-
+Add re setting
 
 
 
-@extends('admin.main_master')
+Adding reservation
 
 
+
+
+
+@include('admin.main_master')
 
 
 <div class="box_p" style="margin-left:450px" >
@@ -21,51 +22,47 @@ hi stock
       <div class="row">
         <div class="col-6">
       
-          <form action="{{route('stock.update')}}" method="POST"> 
+          <form action="{{route('reservation_setting.update')}}" method="POST">
             
-                @csrf
-                <input type="hidden" name="id" value="{{$stock_edit->id}}">
-                <h2 class="box-title">Update Stock</h2>
+            @csrf
+            <input type="hidden" name="id" value="{{$reservation_setting_edit->id}}">
+            <h2 class="box-title">Update Reservation Setting</h2>
+
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Ingredient (Code)</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">opening_time</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->code}}" name="code" id="">
+                <input class="form-control" type="time" value="{{$reservation_setting_edit->opening_time}}" name="opening_time" id="">
               </div>
             </div>
+
             <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Category</label>
+              <label for="example-search-input" class="col-sm-2 col-form-label">close_time</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->category}}" name="category" id="">
+                <input class="form-control" type="time" value="{{$reservation_setting_edit->close_time}}" name="close_time" id="">
               </div>
             </div>
 
 {{-- 
     
-    
-    $table->id();
-            $table->string('code');
-            $table->string('category');
-            $table->string('unit');
-            $table->string('alert_qty');
+     $table->id();
+            $table->time('opening_time');
+            $table->time('close_time');
+            $table->string('max_reserve_person');
             $table->timestamps();
-    
     
     --}}
 
 
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Stock Amount</label>
+              <label for="example-email-input" class="col-sm-2 col-form-label">max_reserve_person</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->unit}}" name="unit" id="">
+                <input class="form-control" type="number" value="{{$reservation_setting_edit->max_reserve_person}}" name="max_reserve_person" id="">
               </div>
             </div>
 
-            <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->alert_qty}}" name="alert_qty" id="">
-              </div>
-            </div>
+
+          
+              
 
             <button type="submit" class="btn btn-primary">Submit</button>
 

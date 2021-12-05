@@ -1,11 +1,8 @@
 
 
-hi stock
 
 
-
-
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 
@@ -21,51 +18,55 @@ hi stock
       <div class="row">
         <div class="col-6">
       
-          <form action="{{route('stock.update')}}" method="POST"> 
+          <form action="{{route('supplier_p_due.store')}}" method="POST">
             
                 @csrf
-                <input type="hidden" name="id" value="{{$stock_edit->id}}">
-                <h2 class="box-title">Update Stock</h2>
+                <h2 class="box-title">Add SupplierDuePayment</h2>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Ingredient (Code)</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Sn</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->code}}" name="code" id="">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Category</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->category}}" name="category" id="">
-              </div>
-            </div>
-
-{{-- 
-    
-    
-    $table->id();
-            $table->string('code');
-            $table->string('category');
-            $table->string('unit');
-            $table->string('alert_qty');
-            $table->timestamps();
-    
-    
-    --}}
-
-
-            <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Stock Amount</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->unit}}" name="unit" id="">
+                <input class="form-control" type="text" value="" name="sn" id="">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="example-email-input" class="col-sm-2 col-form-label">Alert Amount</label>
+              <label for="example-search-input" class="col-sm-2 col-form-label">Date</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" value="{{$stock_edit->alert_qty}}" name="alert_qty" id="">
+                <input class="form-control" type="date" name="date" id="">
               </div>
             </div>
+
+           
+
+            <div class="form-group row">
+              <label for="example-email-input" class="col-sm-2 col-form-label">Supplier</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" value="" name="supplier" id="">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="example-email-input" class="col-sm-2 col-form-label">Amount</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="number" value="" name="amount" id="">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="example-email-input" class="col-sm-2 col-form-label">Note</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" value="" name="note" id="">
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="example-email-input" class="col-sm-2 col-form-label">Added_by</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" value="" name="added_by" id="">
+                </div>
+              </div>
+
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
 

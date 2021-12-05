@@ -19,7 +19,7 @@
           <form action="{{route('supplier.store')}}" method="POST" enctype="multipart/form-data" >
             
                 @csrf
-                <h4 class="box-title">Add Supplier</h4>
+                <h2 class="box-title">Add Supplier</h2>
             <div class="form-group row">
               <label for="example-text-input" class="col-sm-2 col-form-label">Outlet_Id</label>
               <div class="col-sm-10">

@@ -1,6 +1,6 @@
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
 
 
@@ -20,12 +20,24 @@
             
                 @csrf
                 <h4 class="box-title">Add Purchase</h4>
+
+
+ 
+                <div class="form-group row">
+                  <label for="example-date-input" class="col-sm-2 col-form-label">Sn</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="text" value="" name="sn" id="">
+                  </div>
+                </div>
+
+
             <div class="form-group row">
               <label for="example-text-input" class="col-sm-2 col-form-label">Outlet_Id</label>
               <div class="col-sm-10">
                 <input class="form-control" type="text" value="" name="outlet_id" id="">
               </div>
             </div>
+
             <div class="form-group row">
               <label for="example-search-input" class="col-sm-2 col-form-label">Reference_no</label>
               <div class="col-sm-10">
@@ -72,12 +84,8 @@
                 <input class="form-control" type="text" value="" name="due" id="">
               </div>
             </div>
-            <div class="form-group row">
-              <label for="example-date-input" class="col-sm-2 col-form-label">Sn</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" value="" name="sn" id="">
-              </div>
-            </div>
+           
+
             <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>

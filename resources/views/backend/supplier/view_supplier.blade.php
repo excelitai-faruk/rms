@@ -89,7 +89,7 @@ hi Eqramul
                                   
                               
                                   <td style="display:flex">
-                                    <a href="{{ route('supplier.edit', $supplier->id ) }}" class="btn btn-success">Edit</a> 
+                                    <a style="margin: 0px 6px" href="{{ route('supplier.edit', $supplier->id ) }}" class="btn btn-success">Edit</a> 
                                     {{-- <a href="javascript:void(0)" class="btn btn-danger" id="#">Delete</a> --}}
                                     <form action="{{route('supplier.delete')}}" method="POST">
                                         @csrf

@@ -1,6 +1,6 @@
 
 
-@extends('admin.main_master')
+@include('admin.main_master')
 
             <div class="row form-gap" style="margin-top:100px">
                 <div class="col-lg-2"></div>
@@ -73,7 +73,7 @@
                                           
                                       
                                           <td style="display:flex">
-                                            <a href="{{ route('stock.edit', $stock->id ) }}" class="btn btn-success">Edit</a> 
+                                            <a style="margin: 0px 6px" href="{{ route('stock.edit', $stock->id ) }}" class="btn btn-success">Edit</a> 
                                             {{-- <a href="javascript:void(0)" class="btn btn-danger" id="#">Delete</a> --}}
                                             <form action="{{route('stock.delete')}}" method="POST">
                                                 @csrf

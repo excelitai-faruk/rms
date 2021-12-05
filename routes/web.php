@@ -13,6 +13,18 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\StockAdjustmentController;
 
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\SupplierDuePaymentController;
+// use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\UnavailableDayController;
+use App\Http\Controllers\ReservationSettingController;
+use App\Http\Controllers\OrderListController;
+
+
+
+
+
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -277,6 +289,87 @@ Route::get('table/add', [TableController::class, 'TableAdd'])->name('table.add')
 //Store Table
 Route::post('/table/store', [TableController::class, 'TableStore'])->name('table.store');
 
+//Table view 
+
+Route::get('table/view',[TableController::class,'TableView'])->name('table.view');
+
+//Table Edit
+Route::get('/table/edit/{id}',[TableController::class,'TableEdit'])->name('table.edit');
+
+
+//Table Update
+Route::post('/table/update',[TableController::class,'TableUpdate'])->name('table.update');
+
+//Table Delete
+Route::post('/table/delete',[TableController::class,'TableDelete'])->name('table.delete');
+
+
+//******************Supplier Payment Due***************************/
+//Add Supplier Payment Due
+Route::get('supplier_p_due/add', [SupplierDuePaymentController::class, 'SupplierDuePaymentAdd'])->name('supplier_p_due.add');
+
+//Store Supplier Payment Due
+Route::post('/supplier_p_due/store', [SupplierDuePaymentController::class, 'SupplierDuePaymentStore'])->name('supplier_p_due.store');
+
+// view Store Supplier Payment Due
+
+Route::get('supplier_p_due/view',[SupplierDuePaymentController::class,'SupplierDuePaymentView'])->name('supplier_p_due.view');
+
+//Edit Store Supplier Payment Due
+Route::get('/supplier_p_due/edit/{id}',[SupplierDuePaymentController::class,'SupplierDuePaymentEdit'])->name('supplier_p_due.edit');
+
+
+// Update Supplier Payment Due
+ Route::post('/supplier_p_due/update',[SupplierDuePaymentController::class,'SupplierDuePaymentUpdate'])->name('supplier_p_due.update');
+
+//Delete Supplier Payment Due
+ Route::post('/supplier_p_due/delete',[SupplierDuePaymentController::class,'SupplierDuePaymentDelete'])->name('supplier_p_due.delete');
+
+
+
+//******************Attendance ***************************/
+//Add Attendance
+Route::get('attendance/add', [AttendanceController::class, 'AttendanceAdd'])->name('attendance.add');
+
+
+//Store Attendance
+Route::post('/attendance/store', [AttendanceController::class, 'AttendanceStore'])->name('attendance.store');
+
+// // view Store Supplier Payment Due
+
+// Route::get('supplier_p_due/view',[SupplierDuePaymentController::class,'SupplierDuePaymentView'])->name('supplier_p_due.view');
+
+// //Edit Store Supplier Payment Due
+// Route::get('/supplier_p_due/edit/{id}',[SupplierDuePaymentController::class,'SupplierDuePaymentEdit'])->name('supplier_p_due.edit');
+
+
+// // Update Supplier Payment Due
+//  Route::post('/supplier_p_due/update',[SupplierDuePaymentController::class,'SupplierDuePaymentUpdate'])->name('supplier_p_due.update');
+
+// //Delete Supplier Payment Due
+//  Route::post('/supplier_p_due/delete',[SupplierDuePaymentController::class,'SupplierDuePaymentDelete'])->name('supplier_p_due.delete');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -406,8 +499,85 @@ Route::get('/add', [OutletController::class, 'OutletAdd'])->name('outlet.add');
      Route::post('setting/store', [SettingController::class, 'SettingStore'])->name('setting.store');
 
 
+     //******************Reservation***************************/
+//Add Reservation
+Route::get('reservation/add', [ReservationController::class, 'ReservationAdd'])->name('reservation.add');
+
+ //Store Table
+Route::post('/reservation/store', [ReservationController::class, 'ReservationStore'])->name('reservation.store');
+
+ //Reservation view 
+
+ Route::get('reservation/view',[ReservationController::class,'ReservationView'])->name('reservation.view');
+
+//Reservation Edit
+ Route::get('/reservation/edit/{id}',[ReservationController::class,'ReservationEdit'])->name('reservation.edit');
+
+
+//Reservation Update
+Route::post('/reservation/update',[ReservationController::class,'ReservationUpdate'])->name('reservation.update');
+
+//Reservation Delete
+Route::post('/reservation/delete',[ReservationController::class,'ReservationDelete'])->name('reservation.delete');
 
 
 
+//******************Unavailable Day***************************/
+//Add Unavailable Day
+Route::get('unavailable_day/add', [UnavailableDayController::class, 'UnavailableDayAdd'])->name('unavailable_day.add');
+
+ //Store Unavailable Day
+Route::post('/unavailable_day/store', [UnavailableDayController::class, 'UnavailableDayStore'])->name('unavailable_day.store');
+
+// view Unavailable Day
+Route::get('unavailable_day/view',[UnavailableDayController::class,'UnavailableDayView'])->name('unavailable_day.view');
+
+//Edit Unavailable Day
+Route::get('/unavailable_day/edit/{id}',[UnavailableDayController::class,'UnavailableDayEdit'])->name('unavailable_day.edit');
+
+//Update Unavailable Day
+Route::post('/unavailable_day/update',[UnavailableDayController::class,'UnavailableDayUpdate'])->name('unavailable_day.update');
+
+// Delete Unavailable Day
+Route::post('/unavailable_day/delete',[UnavailableDayController::class,'UnavailableDayDelete'])->name('unavailable_day.delete');
 
 
+
+//******************Reservation Setting ***************************/
+//Add Reservation Setting
+Route::get('reservation_setting/add', [ReservationSettingController::class, 'ReservationSettingAdd'])->name('reservation_setting.add');
+
+//Store Reservation Setting
+Route::post('/reservation_setting/store', [ReservationSettingController::class, 'ReservationSettingStore'])->name('reservation_setting.store');
+
+// view Reservation Setting
+ Route::get('reservation_setting/view',[ReservationSettingController::class,'ReservationSettingView'])->name('reservation_setting.view');
+
+ //Edit Reservation Setting
+Route::get('/reservation_setting/edit/{id}',[ReservationSettingController::class,'ReservationSettingEdit'])->name('reservation_setting.edit');
+
+ //Update Reservation Setting
+Route::post('/reservation_setting/update',[ReservationSettingController::class,'ReservationSettingUpdate'])->name('reservation_setting.update');
+
+// Delete Unavailable Day
+Route::post('/reservation_setting/delete',[ReservationSettingController::class,'ReservationSettingDelete'])->name('reservation_setting.delete');
+
+
+//****************** Order List ***************************/
+//Add Order List
+Route::get('order_list/add', [OrderListController::class, 'OrderListAdd'])->name('order_list.add');
+
+//Store Order List
+Route::post('/order_list/store', [OrderListController::class, 'OrderListStore'])->name('order_list.store');
+
+// // view Reservation Setting
+//  Route::get('reservation_setting/view',[ReservationSettingController::class,'ReservationSettingView'])->name('reservation_setting.view');
+
+//  //Edit Reservation Setting
+// Route::get('/reservation_setting/edit/{id}',[ReservationSettingController::class,'ReservationSettingEdit'])->name('reservation_setting.edit');
+
+//  //Update Reservation Setting
+// Route::post('/reservation_setting/update',[ReservationSettingController::class,'ReservationSettingUpdate'])->name('reservation_setting.update');
+
+// // Delete Unavailable Day
+// Route::post('/reservation_setting/delete',[ReservationSettingController::class,'ReservationSettingDelete'])->name('reservation_setting.delete');
