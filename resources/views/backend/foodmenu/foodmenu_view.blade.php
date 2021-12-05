@@ -1,4 +1,4 @@
-@include('admin.main_master')
+ @include('admin.main_master')
 
 
 <div class="row form-gap" style="margin-top:100px">
@@ -8,7 +8,7 @@
     <div class="col-lg-7">
         <div class="card">
             <div class="card-body">
-            <h4 class="card-title">Ingredient Categories View</h4>
+            <h4 class="card-title">Food Menu View</h4>
                 <div id="datatable-buttons_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -28,7 +28,7 @@
                 </div>
                         <div class="col-sm-12 col-md-6"><div id="datatable-buttons_filter" class="dataTables_filter">
                             <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="datatable-buttons"></label>
-                            <a href="{{ route('add.ingredientcategories') }}" class="btn btn-success"> <i class="fas fa-plus"></i>Add Ingredient Categories</a> 
+                            <a href="{{ route('add.menu') }}" class="btn btn-success"> <i class="fas fa-plus"></i>Add Food Menu</a> 
                   
                         </div>
                     </div>
@@ -40,45 +40,50 @@
                         <thead>
                             <tr role="row">
                             <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">ID</th>
+                                aria-label="Name: activate to sort column descending">Outet ID</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Address: activate to sort column ascending">Outlet Id</th>
+                                aria-label="Address: activate to sort column ascending">Name</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Contact_Person: activate to sort column ascending">Category Name</th>
+                                aria-label="Contact_Person: activate to sort column ascending">Code</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Phone: activate to sort column ascending">Description</th>
-                  
-                                {{-- <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending"
-                                aria-label="Name: activate to sort column descending">Unit</th>
+                                aria-label="Phone: activate to sort column ascending">Category</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending"
+                                aria-label="Name: activate to sort column descending">Ingredient Consumtion</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Address: activate to sort column ascending">Code</th>
+                                aria-label="Address: activate to sort column ascending">Sale Price</th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
-                                aria-label="Address: activate to sort column ascending">Name</th> --}}
+                                aria-label="Address: activate to sort column ascending">Featured Photo</th> 
+                                <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
+                                aria-label="Address: activate to sort column ascending">Description</th> 
                                 <th class="sorting" tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1" style="width: 0px;"
                                 aria-label="Action: activate to sort column ascending">Action</th>
                   
                   
-                  
+                 
                                                     
                   
                         </thead>
                             <tbody>
                      
-                                @foreach ($ingredientcategory_view as $Ingredientcategory)
+                                @foreach ($foodmenu_view as $Foodmenu)
                                     <tr>
-                                        <td>{{$Ingredientcategory->id}}</td>
-                                        <td>{{$Ingredientcategory->outlet_id}}</td>
-                                        <td>{{$Ingredientcategory->category_name}}</td>
-                                        <td>{{$Ingredientcategory->description}}</td>
+                                        <td>{{$Foodmenu->id}}</td>
+                                        <td>{{$Foodmenu->name}}</td>
+                                        <td>{{$Foodmenu->code}}</td>
+                                        <td>{{$Foodmenu->category}}</td>
+                                        <td>{{$Foodmenu->ingredient_consumtion}}</td>
+                                        <td>{{$Foodmenu->sale_price}}</td>
+                                        <td><img src="{{asset($Foodmenu->image)}}" alt=""></td>
+                                        <td>{{$Foodmenu->added_by}}</td>
                                           
                                         <td>
-                                            <a href="{{ route('edit.ingredientcategories', $Ingredientcategory->id ) }}" class="btn btn-success">Edit</a> 
-                                            <a href="{{ route('delete.ingredientcategories', $Ingredientcategory->id ) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('edit.menu', $Foodmenu->id ) }}" class="btn btn-success">Edit</a> 
+                                            {{-- <a href="{{ route('delete.ingredientcategories', $Ingredientcategory->id ) }}" class="btn btn-danger">Delete</a> --}}
                                                     
-                                        </td> 
+                                        </td>  
                                     </tr>  
                                 @endforeach
-                            </tbody>
+                            </tbody> 
                     </table>
                 </div>
                     </div>
@@ -86,7 +91,9 @@
                 <div class="col-sm-3"></div>
                 </div>
                                   <!-- /.box-body -->
-                                </div>
+                </div>
+
+            
                               
                             
                 <div class="row">
@@ -125,10 +132,10 @@
                             </div>
                         </div>
                     </div>
-</div>
                 </div>
-                          </div>
-                          </div>
+            </div>
+        </div>
+    </div>
                           <!-- div colum end -->
                           <div class="col-lg-1"></div>
                           </div>
@@ -136,4 +143,4 @@
                     
                     
                     
- 
+

@@ -1,5 +1,5 @@
 
-@extends('admin.main_master') 
+@include('admin.main_master') 
 
 <section class="purches" style="margin-top: 150px">
     <div class="card-body">
@@ -11,7 +11,7 @@
            
             <form action="{{route('update.foodmenucategory')}}" method="POST">
                 @csrf
-                <input type="hidden" name="id" value="{{$foodmenu_edit->id}}">
+                <input type="hidden" name="id" value="{{$foodmenu_edit->id}}">   
                 <div class="form-group row">
                     <label for="example-text-input" class="col-sm-2 col-form-label">ID</label>
                     <div class="col-sm-10">

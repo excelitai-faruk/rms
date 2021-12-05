@@ -55,7 +55,7 @@ class IngredientCategoriesController extends Controller
         ]); 
            
 
-        return redirect()->back();
+        return redirect()->route('view.ingredientcategories');
 
 }//end method
 
@@ -63,7 +63,7 @@ class IngredientCategoriesController extends Controller
 
     public function IngredientCategoriesView(){
 
-        $ingredientcategory_view = IngredientCatergory::latest()->get();
+        $ingredientcategory_view  = IngredientCatergory::latest()->get();
 
         return view('backend.ingredientcategories.ingredientcategories_view',compact('ingredientcategory_view'));
 }//end method
@@ -98,10 +98,10 @@ class IngredientCategoriesController extends Controller
             'description'=>$request->description,
         ]);
 
-        return redirect()->back();
+        return redirect()->back('view.ingredientunits');
  }//end method
 
-//Ingredient Categories Delete
+//Ingredient Delete
 
     public function IngredientCategoriesDelete($id){
 
@@ -111,5 +111,5 @@ class IngredientCategoriesController extends Controller
 }//end method
 
 
-}
+}//main method
 
